@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../Imagens/Fundo.jpg');
+    background-image: url('../Imagens/Fundo_login.jpg');
     background-position: center top;
     background-repeat: no-repeat;
 }
@@ -24,17 +24,23 @@ main {
     background-color: #d0fdd7cb;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.678);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.466);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
 }
 
-main > h1 {
+main > section#login > h1 {
     position: absolute;
     top: 20px; 
     font-size: 35px;
     font-weight: normal;
 }
 
-main > form {
+main > section#login > p{
+    color: rgb(70, 70, 70);
+    font-size: 13px;
+    font-weight: 100;
+}
+
+main > section#login > form {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -42,21 +48,20 @@ main > form {
     align-items: center;
 }
 
-main > form > input {
+main > section#login > form > input {
     height: 30px;
     border-radius: 5px;
     border-style: none;
     border: 1px solid gray;
 }
 
-main > form > input:focus {
+main > section#login > form > input:focus {
     outline: none;
     border: 1px solid #64c27b;
     box-shadow: 0px 0px 5px #64c27b;
 }
 
-main > form > button {
-    margin-top: 10px;
+main > section#login > form > button {
     width: 120px;
     height: 35px;
     background-color: #2A8C4A;
@@ -66,8 +71,7 @@ main > form > button {
     border-radius: 10px;
 }
 
-main > form > button:hover {
+main > section#login > form > button:hover {
     background-color: #9BFAB0;
     color: black;
 }
-

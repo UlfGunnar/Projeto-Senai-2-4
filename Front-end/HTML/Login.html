@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Entrar</title>
     <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="shortcut icon" href="../Imagens/icone.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-
-    </header>
     <main>
-        <h1>Login</h1>
-        <form action="login.php" method="post">
-            <input type="text" id="usuario" placeholder=" Usuario">
-            <input type="password" id="senha" placeholder=" Senha">
-            <button type="submit">Confirmar</button>
-        </form>
-    </main>
-    <footer>
+        <section id="login">
+            <h1>Entrar</h1>
+            <p>Acesse sua conta</p>
 
-    </footer>
+            <form action="#" method="post">
+                <input type="text" id="usuario" placeholder="Usuario">
+                <input type="password" id="senha" placeholder="••••••••">
+
+                <label for="exibir_senha">
+                    <input type="checkbox" name="exibir" id="exibir_senha">
+                    Exibir senha
+                </label>
+
+                <button type="submit">Confirmar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="../JavaScript/script.js"></script>
 </body>
 </html>
