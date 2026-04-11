@@ -10,7 +10,7 @@ Colaborações (usuário do github):
 
     • pedrolucasrodri: Banco de dadas e DAO
 
-    •  IgorFlores123: Back-end
+    • IgorFlores123: Back-end
 
     • flucassb16: Documentações
 
