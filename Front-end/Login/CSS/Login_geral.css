@@ -1,3 +1,7 @@
+/* Configurações gerais da tela de login */
+
+@charset "UTF-8";
+
 * {
     margin: 0px;
     padding: 0px;
@@ -6,31 +10,55 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../Imagens/Fundo_login.jpg');
-    background-position: center top;
     background-repeat: no-repeat;
+    background-image: url(../../Imagens/Fundo_login.jpg);
+    background-position: top center;
+}
+
+header {
+    position: fixed;      
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 1;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2a8c4bee;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.486);
+    z-index: 999;
+}
+
+header > img {
+    height: 100px;        
+}
+
+header > h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #9BFAB0;
+    text-shadow: 1px 1px 5px black;
 }
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 500px;
-    height: 350px;
     background-color: #d0fdd7cb;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.678);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
 }
 
-main > section#login > h1 {
-    position: absolute;
-    top: 20px; 
-    font-size: 35px;
+main > section#login > h2 {
+
     font-weight: normal;
 }
 
@@ -75,4 +103,19 @@ main > section#login > form > button {
 main > section#login > form > button:hover {
     background-color: #9BFAB0;
     color: black;
+}
+
+main > section#register {
+    margin-top: 20px;
+}
+
+main > section#register > a {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
+    color: #9BFAB0;
+    font-weight: bold;
+}
+
+main > section#register > a:hover {
+    text-decoration: underline;
 }
