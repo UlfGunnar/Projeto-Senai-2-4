@@ -1,0 +1,16 @@
+/* Configurações para desktop da tela de login */
+
+body {
+    background-repeat: no-repeat;
+    background-image: url('../Images/Fundo_login_paisagem.jpg');
+    background-position: top center;
+}
+
+header {
+    font-size: 30px;
+}
+
+main {
+    width: 500px;
+    height: 350px;
+}
