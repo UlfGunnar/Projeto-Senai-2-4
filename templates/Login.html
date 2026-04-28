@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
-    <link rel="stylesheet" href="../CSS/Login_geral.css" media="all">
-    <link rel="stylesheet" href="../CSS/Login_retrato.css" media="screen and (orientation: portrait)">
-    <link rel="stylesheet" href="../CSS/Login_paisagem.css" media="screen and (orientation: landscape)">
-    <link rel="shortcut icon" href="../../Imagens/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_geral.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_retrato.css') }}" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_paisagem.css') }}" media="screen and (orientation: landscape)">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Images/icone.ico') }}" type="image/x-icon">
 </head>
 <body>
     <!-- Tela de login -->  
     <header>
-        <img src="../../Imagens/Logo.png" alt="Logo da Dogtor">
+        <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo da Dogtor">
         <h1>Tela de Login</h1>
     </header>
 
@@ -35,10 +35,10 @@
         </section>
 
         <section id="register">
-            <a href="../HTML/Register.html">Sem conta? clique para criar</a>
+            <a href="{{ url_for('register_page') }}">Sem conta? clique para criar</a>
         </section>
     </main>
 
-    <script src="../JavaScript/script.js"></script>
+    <script src="{{ url_for('static', filename='JavaScript/script.js') }}"></script>
 </body>
 </html>

@@ -14,9 +14,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-image: url(../../Imagens/Fundo_login.jpg);
-    background-position: top center;
 }
 
 header {
@@ -111,8 +108,8 @@ main > section#register {
 
 main > section#register > a {
     text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.459);
-    color: #9BFAB0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
+    color: #ffffff;
     font-weight: bold;
 }
 
