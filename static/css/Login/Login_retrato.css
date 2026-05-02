@@ -1,7 +1,9 @@
 /* Configurações para celular da tela de login */
 
+@charset 'UTF-8';
+
 body {
-    background-image: url('../Images/Fundo_login_retrato.jpg');
+    background-image: url('../../Images/Fundo_login_retrato.jpg');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;

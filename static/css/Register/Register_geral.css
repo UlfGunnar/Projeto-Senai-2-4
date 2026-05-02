@@ -25,7 +25,7 @@ header {
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #2a8c4bee;
+    background-color: #64c27bec;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.486);
     z-index: 999;
 }
@@ -54,26 +54,20 @@ main {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
 }
 
-main > section#login > h2 {
-
+main > h2 {
     font-weight: normal;
-}
+    margin-bottom: 15px;
+}   
 
-main > section#login > p{
-    color: rgb(70, 70, 70);
-    font-size: 13px;
-    font-weight: 100;
-}
-
-main > section#login > form {
+main > section#register > form > fieldset > input {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin-top: 25px;
+
+    margin-top: 10px;
     align-items: center;
 }
 
-main > section#login > form > input {
+main > section#register > form > fieldset > input {
     height: 30px;
     padding-left: 5px;
     border-radius: 5px;
@@ -81,13 +75,13 @@ main > section#login > form > input {
     border: 1px solid gray;
 }
 
-main > section#login > form > input:focus {
+main > section#register > form > fieldset > input:focus {
     outline: none;
     border: 1px solid #64c27b;
     box-shadow: 0px 0px 5px #64c27b;
 }
 
-main > section#login > form > button {
+main > section#register > form > button {
     width: 120px;
     height: 35px;
     background-color: #2A8C4A;
@@ -97,22 +91,16 @@ main > section#login > form > button {
     border-radius: 10px;
 }
 
-main > section#login > form > button:hover {
+main > section#register > form > button:hover {
     background-color: #9BFAB0;
     color: black;
 }
 
-main > section#register {
-    margin-top: 20px;
+fieldset {
+    margin: 10px 0px;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 1px #9BFAB0;
 }
 
-main > section#register > a {
-    text-decoration: none;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
-    color: #ffffff;
-    font-weight: bold;
-}
 
-main > section#register > a:hover {
-    text-decoration: underline;
-}
+

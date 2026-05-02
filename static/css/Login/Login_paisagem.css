@@ -1,8 +1,10 @@
 /* Configurações para desktop da tela de login */
 
+@charset 'UTF-8';
+
 body {
     background-repeat: no-repeat;
-    background-image: url('../Images/Fundo_login_paisagem.jpg');
+    background-image: url('../../Images/Fundo_login_paisagem.jpg');
     background-position: top center;
 }
 
