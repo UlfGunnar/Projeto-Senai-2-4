@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_geral.css') }}" media="all">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_retrato.css') }}" media="screen and (orientation: portrait)">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_paisagem.css') }}" media="screen and (orientation: landscape)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login/Login_geral.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login/Login_retrato.css') }}" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login/Login_paisagem.css') }}" media="screen and (orientation: landscape)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='Images/icone.ico') }}" type="image/x-icon">
 </head>
 <body>
@@ -21,9 +21,9 @@
             <h2>Entrar</h2>
             <p>Acesse sua conta</p>
 
-            <form action="#" method="post">
-                <input type="text" id="usuario" placeholder="Usuario">
-                <input type="password" id="senha" placeholder="••••••••">
+            <form action="/login" method="post">
+                <input type="text" id="usuario" name="usuario_login" placeholder="Usuario" required>
+                <input type="password" id="senha" name="senha_login" placeholder="••••••••" required>
 
                 <label for="exibir_senha">
                     <input type="checkbox" name="exibir" id="exibir_senha">

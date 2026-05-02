@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title>      
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register/Register_geral.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register/Register_retrato.css') }}" media="screen and (orientation: portrait)">
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="">
+        <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo">
         <h1>Tela de registro</h1>
     </header>
     <main>
-        <h2>Registrar</h2>
-        <p>Crie sua conta</p>
+        <h2>Cadastrar Conta</h2>
+
+        <section id="register">
+            <form action="register" method="post">
+                
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+
+                    <input type="text" name="nome_register" id="nome" placeholder="Nome completo" required>
+                    <input type="text" name="usuario_register" id="usuario" placeholder="Usuário" required>
+                    <input type="password" name="senha_register" id="senha" placeholder="••••••••" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Contato</legend>
+
+                    <input type="tel" name="celular_register" id="celular" placeholder="(00) 00000-0000">
+                    <input type="email" name="email_register" id="email" placeholder="email@exemplo.com" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Endereço</legend>
+
+                    <input type="text" name="bairro_register" id="bairro" placeholder="Bairro">
+                    <input type="text" name="rua_register" id="rua" placeholder="Rua">
+                    <input type="text" name="numero_register" id="numero" placeholder="Número">
+                    <input type="text" name="complemento_register" id="complemento" placeholder="Complemento">
+                </fieldset>
+
+                <button type="submit">Criar Conta</button>
+            </form>
+
+            <a href="{{ url_for('login_page') }}">voltar</a>
+        </section>
     </main>
-    <a href="{{ url_for('login_page') }}">voltar</a>
+    <script>
+
+    </script>
 </body>
 </html>
