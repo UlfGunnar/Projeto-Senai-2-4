@@ -9,6 +9,10 @@ body {
     background-size: cover;
 }
 
+h1 {
+    font-size: 35px;
+}
+
 main {
     width: 250px;
     height: 370px;

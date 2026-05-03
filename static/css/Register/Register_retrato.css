@@ -10,7 +10,16 @@ body {
 }
 
 main {
+    padding: 40px 5px;
     width: 250px;
     height: 600px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+label {
+    margin-bottom: 10px;
 }
 

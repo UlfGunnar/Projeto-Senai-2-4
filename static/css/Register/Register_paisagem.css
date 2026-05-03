@@ -1,4 +1,4 @@
-/* Configurações para desktop da tela de login */
+/* Configurações para desktop */
 
 @charset 'UTF-8';
 
@@ -12,7 +12,25 @@ h1 {
     font-size: 60px;
 }
 
+h2 {
+    font-size: 30px;
+}
+
 main {
-    width: 500px;
+    width: 650px;
     height: 350px;
+    padding: 35px 10px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    margin-top: 15px;
+    
+}
+label {
+    margin: 5px 0;
 }
