@@ -1,0 +1,25 @@
+/* Configurações de estilo para celular */
+
+@charset 'UTF-8';
+
+body {
+    background-image: url('../../Images/Fundo_login_retrato.jpg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    padding: 40px 5px;
+    width: 250px;
+    height: 600px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
