@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_geral.css') }}" media="all">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" srcset="">
+        <h1>Menu</h1>
+        <img src="" alt="Perfil">
+    </header>
+    <main>
+        <form action="/menu_cliente">
+            <button type="submit">Marcar Consulta</button>
+            <button type="submit">Acompanhar Consulta</button>
+            <button type="submit">Verificar histórico</button>
+        </form>
+    </main>
+</body>
+</html>
