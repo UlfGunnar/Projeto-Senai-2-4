@@ -4,8 +4,9 @@
 
 body {
     background-repeat: no-repeat;
-    background-image: url('../../Images/Fundo_login_paisagem.jpg');
-    background-position: top center;
+    background-image: url('../../Images/Tela_register_paisagem.png');
+    background-position: center center;
+    background-size: cover;
 }
 
 h1 {

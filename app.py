@@ -11,10 +11,7 @@ def processar_login():
     usuario = request.form.get('usuario_login')
     senha = request.form.get('senha_login')
 
-    print(usuario, senha)
-    print(type(usuario), type(senha))
-
-    return f"volte a página" #mudar isto mais pra frente
+    return redirect(url_for('login_page'))
 
 @app.route('/registrar')
 def register_page():
@@ -33,15 +30,12 @@ def processar_register():
     rua = request.form.get('rua_register')
     numero = request.form.get('numero_register')
     complemento = request.form.get('complemento_register')
-
-    print(nome, usuario, senha, celular, email, bairro, rua, numero, complemento)
-    print(
-            type(nome),type(usuario),type(senha),
-            type(celular),type(email),
-            type(bairro),type(rua),type(numero),type(complemento),
-        )
     
-    return f"volte a pagina"
+    return redirect(url_for('Register.html'))
+
+@app.route('/menu')
+def menu_cliente_page():
+    return render_template('Menu_cliente.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
