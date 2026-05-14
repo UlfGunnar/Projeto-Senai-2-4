@@ -1,0 +1,13 @@
+/* Configurações desktop */
+
+@charset 'UTF-8';
+
+body {
+    background-image: url('../../../Images/tela_menu_cliente_paisagem.png');
+    background-position: center center;
+    background-size: cover;
+}
+
+form {
+    flex-direction: row;
+}

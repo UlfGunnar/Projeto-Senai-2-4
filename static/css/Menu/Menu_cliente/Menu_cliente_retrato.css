@@ -1,0 +1,23 @@
+/* Configurações mobile */
+
+@charset 'UTF-8';
+
+body {
+    background-image: url('../../../Images/Tela_menu_cliente_retrato.png');
+    background-size: cover;
+    background-position: center top;
+}
+
+main {
+    height: 300px;
+    width: 125px;
+}
+
+form {
+    flex-direction: column;
+}
+
+button {
+    width: 110px;
+    height: 80px;
+}

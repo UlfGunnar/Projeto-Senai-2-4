@@ -41,17 +41,25 @@ header > h1 {
     text-shadow: 1px 1px 5px black;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #d0fdd79a;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.678);
+    padding: 35px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
+}
+
 form {
     display: flex;
-    flex-direction: column;
     gap: 25px;
-    margin-top: 25px;
     align-items: center;
 }
 
 button {
-    width: 120px;
-    height: 35px;
     background-color: #2A8C4A;
     color: white;
     border: 1px solid gray(0, 0, 0, 0.781);
