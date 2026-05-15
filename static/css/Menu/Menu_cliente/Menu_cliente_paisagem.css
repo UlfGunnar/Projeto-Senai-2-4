@@ -11,3 +11,16 @@ body {
 form {
     flex-direction: row;
 }
+
+main {
+    width: 700px;
+    height: 250px;
+    padding: 0px 40px;
+}
+
+button {
+    margin: 0px 15px;
+    height: 100px;
+    width: 200px;
+    font-size: 20px;
+}
