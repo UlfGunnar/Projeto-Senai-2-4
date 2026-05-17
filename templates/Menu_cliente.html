@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_geral.css') }}" media="all">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_retrato.css') }}" media="screen and (orientation: portrait)">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_paisagem.css') }}" media="screen and (orientation: landscape)">
@@ -12,6 +12,9 @@
     <header>
         <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" srcset="">
         <h1>Menu</h1>
+        <form action="">
+            <button type="submit" id="sair">Sair</button>
+        </form>
     </header>
     <main>
         <div>
