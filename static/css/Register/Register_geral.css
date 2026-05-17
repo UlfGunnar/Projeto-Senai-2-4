@@ -98,6 +98,10 @@ main > section#register > form > button:hover {
     cursor: pointer;
 }
 
+main > section#register > form > button:active {
+    background-color: #136930;
+}
+
 fieldset {
     margin: 10px 5px;
     border-color: #2A8C4A;

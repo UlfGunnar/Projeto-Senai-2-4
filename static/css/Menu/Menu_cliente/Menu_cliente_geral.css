@@ -41,6 +41,15 @@ header > h1 {
     text-shadow: 1px 1px 5px black;
 }
 
+header > form {
+    margin-left: auto;
+}
+
+button#sair {
+    background-color: red;
+    font-weight: bold;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -76,5 +85,5 @@ button:hover {
 }
 
 button:active {
-    background-color: #2A8C4A;
+    background-color: #136930;
 }

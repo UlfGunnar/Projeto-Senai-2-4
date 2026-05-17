@@ -109,6 +109,10 @@ main > section#login > form > button:hover {
     cursor: pointer;
 }
 
+main > section#login > form > button:active {
+    background-color: #136930;
+}
+
 main > section#register {
     margin-top: 20px;
 }
