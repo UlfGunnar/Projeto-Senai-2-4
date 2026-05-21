@@ -24,3 +24,14 @@ button {
     margin: 10px 0px;
     font-size: 17px;
 }
+
+button#sair_botao {
+    margin-right: 30px;
+}
+
+img#sair {
+    width: 40px;
+    height: 40px;
+    padding: 15px;
+}
+

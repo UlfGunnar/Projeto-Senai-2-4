@@ -107,6 +107,7 @@ main > section#login > form > button:hover {
     background-color: #9BFAB0;
     color: black;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 main > section#login > form > button:active {

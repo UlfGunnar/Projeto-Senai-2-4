@@ -45,9 +45,10 @@ header > form {
     margin-left: auto;
 }
 
-button#sair {
-    background-color: red;
-    font-weight: bold;
+button#sair_botao {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 main {
@@ -82,8 +83,17 @@ button:hover {
     background-color: #9BFAB0;
     color: black;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:active {
     background-color: #136930;
+}
+
+img#sair:hover {
+    border: 1px rgba(0, 0, 0, 0.527) solid;
+    background-color: rgba(0, 0, 0, 0.205);
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+    transition: box-shadow 0.5s ease;
 }
