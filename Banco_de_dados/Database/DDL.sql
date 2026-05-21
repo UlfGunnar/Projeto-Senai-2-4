@@ -71,14 +71,14 @@ CREATE TABLE IF NOT EXISTS consulta (
     fk_matricula_medico INT NOT NULL,
     fk_animal INT NOT NULL,
     fk_cpf CHAR(11) NOT NULL,
-	fk_finalidade VARCHAR(20),
+	fk_tipo_consulta INT NOT NULL,
     dt_consulta DATE NOT NULL,
     hr_consulta TIME NOT NULL,
 		
     FOREIGN KEY (fk_matricula_medico) REFERENCES medico(matricula_medico),
 	FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
-    FOREIGN KEY (fk_finalidade) REFERENCES tipo_consulta(finalidade)
+    FOREIGN KEY (fk_tipo_consulta) REFERENCES tipo_consulta(id_tipo)
 )
 default charset = utf8;
 
@@ -88,7 +88,6 @@ CREATE TABLE IF NOT EXISTS login (
     fk_cpf CHAR(11) NOT NULL,
     fk_matricula_secretaria INT NOT NULL,
     fk_matricula_medico INT NOT NULL,
-    usuario VARCHAR(20) NOT NULL,
     senha VARCHAR(10) NOT NULL,
 
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
@@ -97,23 +96,21 @@ CREATE TABLE IF NOT EXISTS login (
 )
 default charset = utf8;
 
-CREATE TABLE IF NOT EXISTS histotico (
+CREATE TABLE IF NOT EXISTS historico (
 
     id_historico INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     fk_animal INT NOT NULL,
     fk_tipo INT NOT NULL,
-    fk_cpf INT NOT NULL,
+    fk_cpf CHAR(11) NOT NULL,
     fk_consulta INT NOT NULL,
     remedio VARCHAR(40) NOT NULL,
     diagnostico VARCHAR(40) NOT NULL,
-    fk_dt_consulta DATE NOT NULL,
-    fk_hr_consulta TIME NOT NULL,
 
     FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_tipo) REFERENCES tipo_consulta(id_tipo),
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
-    FOREIGN KEY (fk_consulta) REFERENCES consulta(id_consulta),
-    FOREIGN KEY (fk_dt_consulta) REFERENCES consulta(dt_consulta),
-    FOREIGN KEY (fk_hr_consulta) REFERENCES consulta(hr_consulta)
+    FOREIGN KEY (fk_consulta) REFERENCES consulta(id_consulta)
+    
 )
 default charset = utf8;
+

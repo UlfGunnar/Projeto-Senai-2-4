@@ -31,11 +31,27 @@ def processar_register():
     numero = request.form.get('numero_register')
     complemento = request.form.get('complemento_register')
     
-    return redirect(url_for('Register.html'))
+    return redirect(url_for('register_page'))
 
 @app.route('/menu')
 def menu_cliente_page():
     return render_template('Menu_cliente.html')
+
+@app.route('/marcar_consulta')
+def marcar_consulta_page():
+    return render_template('Marcar_consulta.html')
+
+@app.route('/menu_cliente_marcar_consulta', methods=['POST'])
+def processar_menu_cliente_marcar_consulta():
+    return redirect(url_for('marcar_consulta_page'))
+
+@app.route('/acompanhar_consulta')
+def acompanhar_consulta_page():
+    return render_template('Acompanhar_consulta.html')
+
+@app.route('/menu_cliente_acompanhar_consulta', methods=['POST']) 
+def processar_menu_cliente_acompanhar_consulta():
+    return redirect(url_for('acompanhar_consulta_page'))
 
 if __name__ == '__main__':
     app.run(debug=True)
