@@ -12,8 +12,8 @@
     <header>
         <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" srcset="">
         <h1>Menu</h1>
-        <form action="">
-            <button type="submit" id="sair">Sair</button>
+        <form action="sair">
+            <button type="submit" id="sair_botao"><img src="{{ url_for('static', filename='Images/simbolo_sair.png') }}" alt="" id="sair"></button>
         </form>
     </header>
     <main>
@@ -25,7 +25,7 @@
                 <button type="submit">Acompanhar Consulta</button>
             </form>
             <form action="verificar_historico" method="post">
-                <button type="submit">Verificar histórico</button>
+                <button type="submit" >Verificar histórico</button>
             </form>
         </div>
     </main>
