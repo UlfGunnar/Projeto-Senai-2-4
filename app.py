@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+#-----------------------#
+#---------LOGIN---------#
+#-----------------------#
+
 @app.route('/')
 def login_page():
     return render_template('Login.html')
@@ -12,6 +16,10 @@ def processar_login():
     senha = request.form.get('senha_login')
 
     return redirect(url_for('login_page'))
+
+#---------------------------#
+#---------REGISTRAR---------#
+#---------------------------#
 
 @app.route('/registrar')
 def register_page():
@@ -33,13 +41,14 @@ def processar_register():
     
     return redirect(url_for('register_page'))
 
-@app.route('/menu')
+#------------------------------#
+#---------MENU CLIENTE---------#
+#------------------------------#
+
+@app.route('/menu_cliente')
 def menu_cliente_page():
     return render_template('Menu_cliente.html')
 
-@app.route('/marcar_consulta')
-def marcar_consulta_page():
-    return render_template('Marcar_consulta.html')
 
 @app.route('/menu_cliente_marcar_consulta', methods=['POST'])
 def processar_menu_cliente_marcar_consulta():
@@ -52,6 +61,18 @@ def acompanhar_consulta_page():
 @app.route('/menu_cliente_acompanhar_consulta', methods=['POST']) 
 def processar_menu_cliente_acompanhar_consulta():
     return redirect(url_for('acompanhar_consulta_page'))
+
+#---------------------------------#
+#---------MARCAR CONSULTA---------#
+#---------------------------------#
+
+@app.route('/marcar_consulta')
+def marcar_consulta_page():
+    return render_template('Marcar_consulta.html')
+
+#---------------------#
+#---------APP---------#
+#---------------------#
 
 if __name__ == '__main__':
     app.run(debug=True)
