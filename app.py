@@ -49,18 +49,21 @@ def processar_register():
 def menu_cliente_page():
     return render_template('Menu_cliente.html')
 
-
-@app.route('/menu_cliente_marcar_consulta', methods=['POST'])
+@app.route('/menu_cliente_marcar_consulta', methods=['GET'])
 def processar_menu_cliente_marcar_consulta():
     return redirect(url_for('marcar_consulta_page'))
 
-@app.route('/acompanhar_consulta')
-def acompanhar_consulta_page():
-    return render_template('Acompanhar_consulta.html')
-
-@app.route('/menu_cliente_acompanhar_consulta', methods=['POST']) 
+@app.route('/menu_cliente_acompanhar_consulta', methods=['GET']) 
 def processar_menu_cliente_acompanhar_consulta():
     return redirect(url_for('acompanhar_consulta_page'))
+
+@app.route('/verificar_historico', methods=['GET']) 
+def processar_menu_cliente_verificar_historico():
+    return redirect(url_for('historico_page'))
+
+@app.route('/sair', methods=['GET'])
+def sair_login():
+    return redirect(url_for('login_page'))
 
 #---------------------------------#
 #---------MARCAR CONSULTA---------#
@@ -69,6 +72,22 @@ def processar_menu_cliente_acompanhar_consulta():
 @app.route('/marcar_consulta')
 def marcar_consulta_page():
     return render_template('Marcar_consulta.html')
+
+#-------------------------------------#
+#---------ACOMPANHAR CONSULTA---------#
+#-------------------------------------#
+
+@app.route('/acompanhar_consulta')
+def acompanhar_consulta_page():
+    return render_template('Acompanhar_consulta.html')
+
+#-------------------------------------#
+#---------Verificar Histórico---------#
+#-------------------------------------#
+
+@app.route('/historico_consulta')
+def historico_page():
+    return render_template('historico.html')
 
 #---------------------#
 #---------APP---------#
