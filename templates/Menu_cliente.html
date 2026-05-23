@@ -7,24 +7,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_geral.css') }}" media="all">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_retrato.css') }}" media="screen and (orientation: portrait)">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Menu/Menu_cliente/Menu_cliente_paisagem.css') }}" media="screen and (orientation: landscape)">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Images/icone.ico') }}" type="image/x-icon">
 </head>
 <body>
     <header>
         <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" srcset="">
         <h1>Menu</h1>
-        <form action="sair">
-            <button type="submit" id="sair_botao"><img src="{{ url_for('static', filename='Images/simbolo_sair.png') }}" alt="" id="sair"></button>
+        <form action="sair" method="get">
+            <abbr title="Sair">
+                <button type="submit" id="sair_botao">
+                    <img src="{{ url_for('static', filename='Images/simbolo_sair.png') }}" alt="" id="sair">
+                </button>
+            </abbr>
         </form>
     </header>
     <main>
         <div>
-            <form action="menu_cliente_marcar_consulta" method="post">
+            <form action="menu_cliente_marcar_consulta" method="get">
                 <button type="submit">Marcar Consulta</button>
             </form>
-            <form action="menu_cliente_acompanhar_consulta" method="post">
+            <form action="menu_cliente_acompanhar_consulta" method="get">
                 <button type="submit">Acompanhar Consulta</button>
             </form>
-            <form action="verificar_historico" method="post">
+            <form action="verificar_historico" method="get">
                 <button type="submit" >Verificar histórico</button>
             </form>
         </div>

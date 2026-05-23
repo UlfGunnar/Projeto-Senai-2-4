@@ -3,9 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcar Consulta</title>
-</head>
+    <title>Marcar Consulta</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Marcar_consulta/Marcar_consulta_geral.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Marcar_consulta/Marcar_consulta_retrato.css') }}" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Marcar_consulta/Marcar_consulta_paisagem.css') }}" media="screen and (orientation: landscape)">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Images/icone.ico') }}" type="image/x-icon">
 <body>
-    <h1>Página de marcar consulta</h1>
+    <header>
+        <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" srcset="">
+        <h1>Marcar Consulta</h1>
+        <form action="sair" method="get">
+            <abbr title="Sair">
+                <button type="submit" id="sair_botao">
+                    <img src="{{ url_for('static', filename='Images/simbolo_sair.png') }}" alt="" id="sair">
+                </button>
+            </abbr>
+        </form>
+    </header>
+    <main>
+        <form action="agendar">
+            <select name="select_tipo_consulta">
+                <option selected disabled>Selecione o tipo de consulta...</option>
+                <option value="1">Opção 1</option>
+                <option value="2">Opção 2</option>
+            </select>
+            <select name="select_especie">
+                <option selected disabled>Selecione a espécie...</option>
+                <option value="1">Cachorro</option>
+                <option value="2">Gato</option>
+                <option value="3">Passáro</option>
+                <option value="4">Cavalo</option>
+                <option value="5">Porco</option>
+                <option value="6">Vaca</option>
+                <option value="0">Outro</option>
+            </select>
+            <input type="text" name="outro_animal" id="" placeholder="espécie do seu pet">
+            <input type="text" name="nome_animal" placeholder="Nome do seu pet">
+            <input type="date" name="" id="">
+            <select name="horario">
+                <option selected disabled>Selecione o horário...</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+            </select>
+            <label for="consulta_residencial">
+                <input type="checkbox" name="" id="consulta_residencial">
+                Consulta Residencial
+            </label>
+
+            <!-- FAZER O IF CASO O USUÁRIO NÃO TENHA CRIADO A CONTA COM ENDEREÇO -->
+
+            <input type="text" name="bairro_register" id="bairro" placeholder="Bairro">
+            <input type="text" name="rua_register" id="rua" placeholder="Rua">
+            <input type="text" name="numero_register" id="numero" placeholder="Número">
+            <input type="text" name="complemento_register" id="complemento" placeholder="Complemento">
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+    <footer>
+        <form action="Voltar">
+            <button type="submit">Voltar</button>
+        </form>
+    </footer>
 </body>
 </html>
