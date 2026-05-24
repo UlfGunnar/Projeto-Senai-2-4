@@ -3,7 +3,7 @@
 @charset 'UTF-8';
 
 body {
-    background-image: url('../../../Images/Tela_menu_cliente_retrato.png');
+    background-image: url('../../Images/Tela_marcar_consulta_retrato.png');
     background-size: cover;
     background-position: center top;
 }
@@ -11,12 +11,10 @@ body {
 main {
     height: 300px;
     width: 125px;
-    padding: 50px 35px;
-}
-
-div {
+    padding: 50px;
     flex-direction: column;
 }
+
 
 button {
     width: 110px;
