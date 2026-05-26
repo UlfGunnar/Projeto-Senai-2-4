@@ -4,13 +4,13 @@ default collate utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS cliente (
     
-    id_cpf CHAR(11) NOT NULL PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
+    cpf CHAR(11) NOT NULL PRIMARY KEY,
+    nome_cliente VARCHAR(50) NOT NULL,
     email VARCHAR(80)NOT NULL,
-    num_celular CHAR(11),
+    celular CHAR(11),
     bairro VARCHAR(20) NOT NULL,
     rua CHAR(50) NOT NULL,
-	num_residencia CHAR(10) NOT NULL,
+	numero CHAR(10) NOT NULL,
     complemento VARCHAR(50)
 )
 default charset = utf8;
@@ -20,10 +20,10 @@ CREATE TABLE IF NOT EXISTS animal (
 	id_animal INT AUTO_INCREMENT PRIMARY KEY,
     fk_cpf CHAR(11) NOT NULL,
     nome_animal VARCHAR(30) NOT NULL,
-    genero_animal CHAR(1) NOT NULL,
+    genero CHAR(1) NOT NULL,
     especie VARCHAR(15) NOT NULL,
     raca VARCHAR(15),
-	peso_animal DECIMAL(5,2) NOT NULL,
+	peso DECIMAL(5,2) NOT NULL,
     
     FOREIGN KEY (fk_cpf) REFERENCES cliente(id_cpf)   
 ) 
