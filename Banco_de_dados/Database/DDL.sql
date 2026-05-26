@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS cliente (
     email VARCHAR(80)NOT NULL,
     celular CHAR(11),
     bairro VARCHAR(20) NOT NULL,
-    rua CHAR(50) NOT NULL,
+    rua CHAR(100) NOT NULL,
 	numero CHAR(10) NOT NULL,
     complemento VARCHAR(50)
 )
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS login (
     fk_cpf CHAR(11) NOT NULL,
     fk_matricula_secretaria INT NOT NULL,
     fk_matricula_medico INT NOT NULL,
-    senha VARCHAR(10) NOT NULL,
+    senha VARCHAR(50) NOT NULL,
 
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
     FOREIGN KEY (fk_matricula_secretaria) REFERENCES secretaria(matricula_secretaria),
