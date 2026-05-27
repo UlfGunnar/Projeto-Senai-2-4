@@ -8,19 +8,18 @@ class ConsultaDAO:
 
             sql = """
             INSERT INTO consulta (
-                id_consulta, matricula_medico, id_animal, cpf, tipo_consulta, data, hora, residencial
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                id_consulta, fk_matricula_medico, fk_animal, fk_cpf, fk_tipo_consulta, dt_consulta, hr_consulta
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
             """
 
             valores = (
                 consulta.id_consulta,
-                consulta.matricula_medico,
-                consulta.id_animal,
-                consulta.cpf,
-                consulta.tipo_consulta,
-                consulta.data,
-                consulta.hora,
-                consulta.residencial
+                consulta.fk_matricula_medico,
+                consulta.fk_animal,
+                consulta.fk_cpf,
+                consulta.fk_tipo_consulta,
+                consulta.dt_consulta,
+                consulta.hr_consulta
             )
 
             cursor.execute(sql, valores)

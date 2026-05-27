@@ -8,18 +8,18 @@ class SecretariaDAO:
 
             sql = """
             INSERT INTO secretaria (
-                matricula_secretaria, nome, rua, complemento, data_nascimento, email, celular
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                matricula_secretaria, nome_secretaria, rua, complemento, dt_nascimento, email, num_celular
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
             """
 
             valores = (
                 secretaria.matricula_secretaria,
-                secretaria.nome,
+                secretaria.nome_secretaria,
                 secretaria.rua,
                 secretaria.complemento,
-                secretaria.data_nascimento,
+                secretaria.dt_nascimento,
                 secretaria.email,
-                secretaria.celular
+                secretaria.num_celular
             )
 
             cursor.execute(sql, valores)
