@@ -8,13 +8,13 @@ class ClienteDAO:
 
             sql = """
             INSERT INTO cliente (
-                cpf, nome, email, bairro, rua, numero, complemento, celular
+                cpf, nome_cliente, email, bairro, rua, numero, complemento, celular
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """
 
             valores = (
                 cliente.cpf,
-                cliente.nome,
+                cliente.nome_cliente,
                 cliente.email,
                 cliente.bairro,
                 cliente.rua,

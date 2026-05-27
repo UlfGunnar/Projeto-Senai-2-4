@@ -1,12 +1,12 @@
 class Paciente():
-    def __init__(self, cpf: str,nome: str, email: str, num_casa: int, bairro: str, rua: str, num_tele: str, complemento: str ):
+    def __init__(self, cpf: str,nome_cliente: str, email: str, numero: int, bairro: str, rua: str, celular: str, complemento: str ):
         self.cpf = cpf
-        self.nome = nome
+        self.nome_cliente = nome_cliente
         self.email = email
-        self.num_casa = num_casa
+        self.numero = numero
         self.bairro = bairro
         self.rua = rua
-        self.num_tele = num_tele
+        self.celular = celular
         self.complemento = complemento
 
 class Animal():
