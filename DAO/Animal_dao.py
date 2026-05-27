@@ -2,31 +2,32 @@ from connection.connection import get_connection
 
 class AnimalDAO:
     def inserir_animal(self, animal):
-        conn = get_connection()
+        try:
+            conn = get_connection()
+            cursor = conn.cursor()
+
+            sql = """
+            INSERT INTO animal (
+                id_animal, cpf, nome, raca, especie, genero, peso
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """
+
+            valores = (
+                animal.id_animal,
+                animal.cpf,
+                animal.nome,
+                animal.raca,
+                animal.especie,
+                animal.genero,
+                animal.peso
+            )
+
+            cursor.execute(sql, valores)
+            conn.commit()
         
-        if conn is None:
-            print("Erro na conexão com o banco de dados.")
-            return
-        
-        cursor = conn.cursor()
+        except Exception as e:
+            print("Erro ao inserir animal: ", e)
 
-        sql = """
-        INSERT INTO animal (
-            nome, cpf, raca, especie, genero, peso
-        ) VALUES (%s, %s, %s, %s, %s, %s,)
-        """
-
-        valores = (
-            animal.nome,
-            animal.cpf,
-            animal.raca,
-            animal.especie,
-            animal.genero,
-            animal.peso
-        )
-
-        cursor.execute(sql, valores)
-        conn.commit()
-
-        cursor.close()
-        conn.close()        
+        finally:
+            cursor.close()
+            conn.close()        

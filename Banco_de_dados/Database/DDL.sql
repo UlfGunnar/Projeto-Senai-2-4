@@ -4,13 +4,13 @@ default collate utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS cliente (
     
-    id_cpf CHAR(11) NOT NULL PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
+    cpf CHAR(11) NOT NULL PRIMARY KEY,
+    nome_cliente VARCHAR(50) NOT NULL,
     email VARCHAR(80)NOT NULL,
-    num_celular CHAR(11),
+    celular CHAR(11),
     bairro VARCHAR(20) NOT NULL,
-    rua CHAR(50) NOT NULL,
-	num_residencia CHAR(10) NOT NULL,
+    rua CHAR(100) NOT NULL,
+	numero CHAR(10) NOT NULL,
     complemento VARCHAR(50)
 )
 default charset = utf8;
@@ -20,12 +20,12 @@ CREATE TABLE IF NOT EXISTS animal (
 	id_animal INT AUTO_INCREMENT PRIMARY KEY,
     fk_cpf CHAR(11) NOT NULL,
     nome_animal VARCHAR(30) NOT NULL,
-    genero_animal CHAR(1) NOT NULL,
+    genero CHAR(1) NOT NULL,
     especie VARCHAR(15) NOT NULL,
     raca VARCHAR(15),
-	peso_animal DECIMAL(5,2) NOT NULL,
+	peso DECIMAL(5,2) NOT NULL,
     
-    FOREIGN KEY (fk_cpf) REFERENCES cliente(id_cpf)   
+    FOREIGN KEY (fk_cpf) REFERENCES cliente(cpf)   
 ) 
 default charset = utf8;
 
@@ -37,7 +37,6 @@ CREATE TABLE IF NOT EXISTS medico (
     email VARCHAR(80) NOT NULL,
     bairro VARCHAR(20) NOT NULL,
     rua CHAR(50) NOT NULL,
-	num_residencia CHAR(10) NOT NULL,
     complemento VARCHAR(50),
     dt_nascimento DATE NOT NULL 
 )
@@ -51,7 +50,6 @@ CREATE TABLE IF NOT EXISTS secretaria (
     email VARCHAR(80) NOT NULL,
     bairro VARCHAR(20) NOT NULL,
     rua CHAR(50) NOT NULL,
-	num_residencia CHAR(10) NOT NULL,
     complemento VARCHAR(50),
     dt_nascimento DATE NOT NULL
 )
@@ -60,6 +58,7 @@ default charset = utf8;
 CREATE TABLE IF NOT EXISTS tipo_consulta (
 	
     id_tipo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_consulta INT NOT NULL,
 	finalidade VARCHAR(20),
     valor DECIMAL(7,2)
 )
@@ -77,7 +76,7 @@ CREATE TABLE IF NOT EXISTS consulta (
 		
     FOREIGN KEY (fk_matricula_medico) REFERENCES medico(matricula_medico),
 	FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
-    FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
+    FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
     FOREIGN KEY (fk_tipo_consulta) REFERENCES tipo_consulta(id_tipo)
 )
 default charset = utf8;
@@ -88,9 +87,9 @@ CREATE TABLE IF NOT EXISTS login (
     fk_cpf CHAR(11) NOT NULL,
     fk_matricula_secretaria INT NOT NULL,
     fk_matricula_medico INT NOT NULL,
-    senha VARCHAR(10) NOT NULL,
+    senha VARCHAR(50) NOT NULL,
 
-    FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
+    FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
     FOREIGN KEY (fk_matricula_secretaria) REFERENCES secretaria(matricula_secretaria),
     FOREIGN KEY (fk_matricula_medico) REFERENCES medico(matricula_medico)
 )
@@ -105,11 +104,15 @@ CREATE TABLE IF NOT EXISTS historico (
     fk_consulta INT NOT NULL,
     remedio VARCHAR(40) NOT NULL,
     diagnostico VARCHAR(40) NOT NULL,
+    fk_data DATE NOT NULL,
+    fk_hora TIME NOT NULL,
 
     FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_tipo) REFERENCES tipo_consulta(id_tipo),
-    FOREIGN KEY (fk_cpf) REFERENCES	cliente(id_cpf),
-    FOREIGN KEY (fk_consulta) REFERENCES consulta(id_consulta)
+    FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
+    FOREIGN KEY (fk_consulta) REFERENCES consulta(id_consulta),
+    FOREIGN KEY (fk_data) REFERENCES consulta(dt_consulta),
+    FOREIGN KEY (fk_hora) REFERENCES consulta(hr_consulta)
     
 )
 default charset = utf8;

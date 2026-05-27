@@ -67,8 +67,10 @@ div {
 }
 
 form {
-    gap: 25px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 button {
@@ -101,4 +103,63 @@ img#sair:hover {
     background-color: rgba(0, 0, 0, 0.205);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
     transition: box-shadow 0.5s ease;
+}
+
+fieldset#form_endereco {
+    display: none;
+}
+
+input#form_especie {
+    display: none;
+}
+
+label#proprio_endereco {
+    display: none;
+}
+
+input, select {
+    height: 25px;
+    width: 200px;
+    margin: 1px 0px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid gray;
+}
+
+input:focus.select, select:focus.caixa_texto {
+    outline: none;
+    border: 1px solid #64c27b;
+    box-shadow: 0px 0px 5px #64c27b;
+}
+
+input[type="checkbox"] {
+    height: auto;
+    width: auto;
+}
+
+fieldset {
+    margin: 5px 5px;
+    border-color: #2A8C4A;
+    padding: 5px;
+}
+
+img#botao_salvar {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245, 0.329);
+    padding: 15px;
+}
+
+img#botao_salvar:hover {
+    outline: 1px rgba(0, 0, 0, 0.527) solid;
+    background-color: rgba(255, 255, 255, 0.205);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+    transition: box-shadow 0.5s ease;
+}
+
+button#btn_voltar {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 }
