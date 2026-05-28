@@ -10,6 +10,7 @@ from DAO.classes import Animal
 dao = AnimalDAO()
 
 animal = Animal(
+    None,
     "12345678901",
     "rex",
     "Pitbull",
