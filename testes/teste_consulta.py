@@ -10,6 +10,7 @@ from DAO.classes import Consulta
 dao = ConsultaDAO()
 
 consulta = Consulta(
+    None,
     1,
     1,
     "12345678901",

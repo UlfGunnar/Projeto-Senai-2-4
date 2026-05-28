@@ -10,13 +10,14 @@ from DAO.classes import Medico
 dao = MedicoDAO()
 
 medico = Medico(
-    1,
+    None,
     "Dr. João Silva",
+    "1998-05-15",
     "47999999999",
     "joao.silva_dogtor@gmail.com",
     "Imuit",
     "XV de Piracicaba",
-    "1998-05-15",
+    None,
 )
 
 dao.inserir_medico(medico)

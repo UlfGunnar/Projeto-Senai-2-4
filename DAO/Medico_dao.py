@@ -8,13 +8,14 @@ class MedicoDAO:
 
             sql = """
             INSERT INTO medico(
-                matricula_medico, nome_medico, rua, complemento, dt_nascimento, email, num_celular
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                matricula_medico, nome_medico, bairro, rua, complemento, dt_nascimento, email, num_celular
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """
 
             valores = (
                 medico.matricula_medico,
                 medico.nome_medico,
+                medico.bairro,
                 medico.rua,
                 medico.complemento,
                 medico.dt_nascimento,
