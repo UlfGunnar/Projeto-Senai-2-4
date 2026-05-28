@@ -72,6 +72,30 @@ def sair_login():
 def marcar_consulta_page():
     return render_template('Marcar_consulta.html')
 
+@app.route('/Voltar_menu_cliente', methods=['GET'])
+def processar_voltar_menu_cliente():
+    return redirect(url_for('menu_cliente_page'))
+
+@app.route('/agendar', methods=['POST']) 
+def processar_marcar_consulta():    
+    tipo_consulta           = request.form.get('select_tipo_consulta')
+    especie_animal          = request.form.get('select_especie')
+    outro_especie           = request.form.get('outro_animal')
+    nome_animal             = request.form.get('nome_animal')
+
+    data_consulta           = request.form.get('form_data')
+    hora_consulta           = request.form.get('horario')
+
+    bairro_consulta         = request.form.get('bairro_register')
+    rua_consulta            = request.form.get('rua_register')
+    num_consulta            = request.form.get('numero_register')
+    complemento_consulta    = request.form.get('complemento_register')
+    proprio_endereco        = request.form.get('endereco')
+
+    # não tem required nos inputs, pois alguns não aceitam, backend terá que checar se possuiem algum valor 
+
+    return redirect(url_for('marcar_consulta_page'))
+
 #-------------------------------------#
 #---------ACOMPANHAR CONSULTA---------#
 #-------------------------------------#
