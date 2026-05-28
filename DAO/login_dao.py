@@ -8,12 +8,11 @@ class LoginDAO:
 
             sql = """
             INSERT INTO login( 
-                id_conta, fk_cpf, fk_matricula_secretaria, fk_matricula_medico, usuario, senha
-            ) VALUES (%s, %s, %s, %s, %s, %s,)
+                fk_cpf, fk_matricula_secretaria, fk_matricula_medico, usuario, senha
+            ) VALUES (%s, %s, %s, %s, %s)
             """
 
             valores = (
-                  login.id_conta,
                   login.fk_cpf,
                   login.fk_matricula_secretaria,
                   login.fk_matricula_medico,

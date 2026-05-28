@@ -8,12 +8,11 @@ class AnimalDAO:
 
             sql = """
             INSERT INTO animal (
-                id_animal, fk_cpf, nome_animal, raca, especie, genero, peso
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                fk_cpf, nome_animal, raca, especie, genero, peso
+            ) VALUES (%s, %s, %s, %s, %s, %s)
             """
 
             valores = (
-                animal.id_animal,
                 animal.fk_cpf,
                 animal.nome_animal,
                 animal.raca,
