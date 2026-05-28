@@ -15,12 +15,12 @@ class MedicoDAO:
             valores = (
                 medico.matricula_medico,
                 medico.nome_medico,
+                medico.dt_nascimento,
+                medico.num_celular,
+                medico.email,
                 medico.bairro,
                 medico.rua,
-                medico.complemento,
-                medico.dt_nascimento,
-                medico.email,
-                medico.num_celular
+                medico.complemento
             )
 
             cursor.execute(sql, valores)

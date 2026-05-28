@@ -10,14 +10,14 @@ from DAO.classes import Paciente
 dao = ClienteDAO()
 
 cliente = Paciente(
-    "12345678901",
     "Pedrão Luxeba",
+    "12345678901",
+    "47999999999"
     "pedrolr2060@gmail.com",
     "Itmiu",
     "Rua 13 de China",
-    "123",
     "Ap 102",
-    "47999999999"
+    "123",
 )
 
 dao.inserir_cliente(cliente)
