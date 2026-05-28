@@ -12,11 +12,12 @@ dao = SecretariaDAO()
 secretaria = Secretaria(
     1,
     "Maria Oliveira",
+    "2002-05-15",
     "47999999999",
     "maria.oliveira_dogtor@gmail.com",
     "Anitapolis",
     "Rua das Flores",
-    "2002-05-15",
+    None
 )
 
 dao.inserir_secretaria(secretaria)

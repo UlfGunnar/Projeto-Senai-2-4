@@ -10,6 +10,7 @@ from DAO.classes import Tipo_de_consulta
 dao = TiposDeConsultaDAO()
 
 tipo_consulta = Tipo_de_consulta(
+    None,
     1,
     "Consulta de rotina",
     150.00
