@@ -44,7 +44,7 @@ class Secretaria():
 class Consulta():
     #data = date
     #hora = date
-    def __init__(self, id_consulta: int, fk_matricula_medico: int, fk_animal: int, fk_cpf: str, fk_tipo_consulta: int, dt_consulta, hr_consulta):
+    def __init__(self, id_consulta: int, fk_animal: int,  fk_cpf: str, fk_matricula_medico: int, fk_tipo_consulta: int, dt_consulta, hr_consulta):
         self.id_consulta = id_consulta
         self.fk_animal = fk_animal
         self.fk_cpf = fk_cpf
