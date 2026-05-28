@@ -33,8 +33,8 @@ class Medico():
 
 class Secretaria():
     def __init__(self, matricula_secretaria: int, nome_secretaria: str, dt_nascimento: str, email: str, rua: str, num_celular: str, complemento: str, bairro: str):
-        self.matricula_medico = matricula_secretaria
-        self.nome_medico = nome_secretaria
+        self.matricula_secretaria = matricula_secretaria
+        self.nome_secretaria = nome_secretaria
         self.dt_nascimento = dt_nascimento
         self.num_celular = num_celular
         self.email = email
