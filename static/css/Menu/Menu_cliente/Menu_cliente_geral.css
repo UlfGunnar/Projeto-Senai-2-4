@@ -1,4 +1,4 @@
-/* Configurações gerais da tela de login */
+/* Configurações gerais */
 
 @charset "UTF-8";
 
@@ -21,11 +21,10 @@ header {
     top: 0;
     left: 0;
     width: 100%; 
-    height: 1;
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #2a8c4bee;
+    background-color: #64c27bec;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.486);
     z-index: 999;
 }
@@ -42,54 +41,37 @@ header > h1 {
     text-shadow: 1px 1px 5px black;
 }
 
+header > form {
+    margin-left: auto;
+}
+
+button#sair_botao {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
 main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: #d0fdd7cb;
+    background-color: #d0fdd79a;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.678);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
 }
 
-main > section#login > h2 {
-
-    font-weight: normal;
-}
-
-main > section#login > p{
-    color: rgb(70, 70, 70);
-    font-size: 13px;
-    font-weight: 100;
-}
-
-main > section#login > form {
+div {
     display: flex;
-    flex-direction: column;
+}
+
+form {
     gap: 25px;
-    margin-top: 25px;
     align-items: center;
 }
 
-main > section#login > form > input {
-    height: 30px;
-    padding-left: 5px;
-    border-radius: 5px;
-    border-style: none;
-    border: 1px solid gray;
-}
-
-main > section#login > form > input:focus {
-    outline: none;
-    border: 1px solid #64c27b;
-    box-shadow: 0px 0px 5px #64c27b;
-}
-
-main > section#login > form > button {
-    width: 120px;
-    height: 35px;
+button {
     background-color: #2A8C4A;
     color: white;
     border: 1px solid gray(0, 0, 0, 0.781);
@@ -97,22 +79,26 @@ main > section#login > form > button {
     border-radius: 10px;
 }
 
-main > section#login > form > button:hover {
+button:hover {
     background-color: #9BFAB0;
     color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-main > section#register {
-    margin-top: 20px;
+button:active {
+    background-color: #136930;
 }
 
-main > section#register > a {
-    text-decoration: none;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
-    color: #ffffff;
-    font-weight: bold;
+img#sair {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 15px;
 }
 
-main > section#register > a:hover {
-    text-decoration: underline;
+img#sair:hover {
+    outline: 1px rgba(0, 0, 0, 0.527) solid;
+    background-color: rgba(0, 0, 0, 0.205);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+    transition: box-shadow 0.5s ease;
 }

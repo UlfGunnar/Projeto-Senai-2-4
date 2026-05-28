@@ -1,0 +1,45 @@
+/* Configurações mobile */
+
+@charset 'UTF-8';
+
+body {
+    background-image: url('../../Images/Tela_marcar_consulta_retrato.png');
+    background-size: cover;
+    background-position: center top;
+}
+
+main {
+    margin-top: 100px;
+    height: 520px;
+    width: 125px;
+    padding: 50px 60px;
+    flex-direction: column;
+}
+
+h2 {
+    align-self: center;
+    position: static;
+}
+
+button {
+    width: 110px;
+    height: 50px;
+    margin: 10px 0px;
+    font-size: 17px;
+}
+
+img#botao_voltar {
+    height: 50px;
+    width: 50px;
+}
+
+button#sair_botao {
+    margin-right: 10px;
+}
+
+img#sair {
+    width: 40px;
+    height: 40px;
+}
+
+
