@@ -104,15 +104,11 @@ CREATE TABLE IF NOT EXISTS historico (
     fk_consulta INT NOT NULL,
     remedio VARCHAR(40) NOT NULL,
     diagnostico VARCHAR(40) NOT NULL,
-    fk_data DATE NOT NULL,
-    fk_hora TIME NOT NULL,
 
     FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_tipo) REFERENCES tipo_consulta(id_tipo),
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
-    FOREIGN KEY (fk_consulta) REFERENCES consulta(id_consulta),
-    FOREIGN KEY (fk_data) REFERENCES consulta(dt_consulta),
-    FOREIGN KEY (fk_hora) REFERENCES consulta(hr_consulta)
+    FOREIGN KEY (fk_consulta) REFERENCES consulta(id_consulta)
     
 )
 default charset = utf8;

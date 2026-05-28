@@ -21,7 +21,7 @@ class Animal():
         
 class Medico():
     #data_nasc = Date
-    def __init__(self, matricula_medico: int, nome_medico: str, num_celular: str, rua: str, complemento: str, dt_nascimento: str, email: str):
+    def __init__(self, matricula_medico: int, nome_medico: str, num_celular: str, rua: str, complemento: str, dt_nascimento: str, email: str, bairro: str):
         self.matricula_medico = matricula_medico
         self.nome_medico = nome_medico
         self.num_celular = num_celular
@@ -29,9 +29,10 @@ class Medico():
         self.complemento = complemento
         self.dt_nascimento = dt_nascimento
         self.email = email
+        self.bairro = bairro
 
 class Secretaria():
-    def __init__(self, matricula_secretaria: int, nome_secretaria: str, dt_nascimento: str, email: str, rua: str, num_celular: str, complemento: str):
+    def __init__(self, matricula_secretaria: int, nome_secretaria: str, dt_nascimento: str, email: str, rua: str, num_celular: str, complemento: str, bairro: str):
         self.matricula_secretaria = matricula_secretaria
         self.nome_secretaria = nome_secretaria
         self.dt_nascimento = dt_nascimento
@@ -39,7 +40,7 @@ class Secretaria():
         self.rua = rua
         self.num_celular = num_celular
         self.complemento = complemento
-    
+        self.bairro = bairro
 class Consulta():
     #data = date
     #hora = date
@@ -71,7 +72,7 @@ class Login():
 class Historico():
     #data_consulta = date
     #hora_consulta = date
-    def __init__(self, id_historico: int, fk_animal: int, fk_tipo: int, fk_cpf: str, fk_consulta: int, remedio: str, diagnostico: str, fk_data, fk_hora):
+    def __init__(self, id_historico: int, fk_animal: int, fk_tipo: int, fk_cpf: str, fk_consulta: int, remedio: str, diagnostico: str, data, hora):
         self.id_historico = id_historico
         self.fk_animal = fk_animal
         self.fk_tipo = fk_tipo
@@ -79,5 +80,6 @@ class Historico():
         self.fk_consulta = fk_consulta
         self.remedio = remedio
         self.diagnostico = diagnostico
-        self.fk_data = fk_data
-        self.fk_hora = fk_hora
+        self.data = data
+        self.hora = hora
+
