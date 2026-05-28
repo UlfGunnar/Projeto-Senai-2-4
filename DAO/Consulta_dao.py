@@ -13,9 +13,9 @@ class ConsultaDAO:
             """
 
             valores = (
-                consulta.fk_matricula_medico,
                 consulta.fk_animal,
                 consulta.fk_cpf,
+                consulta.fk_matricula_medico,
                 consulta.fk_tipo_consulta,
                 consulta.dt_consulta,
                 consulta.hr_consulta
