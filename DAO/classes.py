@@ -61,12 +61,11 @@ class Tipo_de_consulta():
         self.valor = valor
 
 class Login():
-    def __init__(self, id_conta: int, fk_cpf: str, fk_matricula_secretaria: int, fk_matricula_medico: int, usuario: str, senha: str):
+    def __init__(self, id_conta: int, fk_cpf: str, fk_matricula_secretaria: int, fk_matricula_medico: int, senha: str):
         self.id_conta = id_conta
         self.fk_cpf = fk_cpf
         self.fk_matricula_secretaria = fk_matricula_secretaria
         self.fk_matricula_medico = fk_matricula_medico
-        self.usuario = usuario
         self.senha = senha
 
 class Historico():
