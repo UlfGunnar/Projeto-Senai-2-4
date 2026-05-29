@@ -72,7 +72,7 @@ class Login():
 class Historico():
     #data_consulta = date
     #hora_consulta = date
-    def __init__(self, id_historico: int, fk_animal: int, fk_tipo: int, fk_cpf: str, fk_consulta: int, remedio: str, diagnostico: str, data, hora):
+    def __init__(self, id_historico: int, fk_animal: int, fk_cpf: str, fk_tipo: int, fk_consulta: int, diagnostico: str, remedio: str, data, hora):
         self.id_historico = id_historico
         self.fk_animal = fk_animal
         self.fk_cpf = fk_cpf
