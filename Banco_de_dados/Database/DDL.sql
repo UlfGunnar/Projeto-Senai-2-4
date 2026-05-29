@@ -88,6 +88,7 @@ CREATE TABLE IF NOT EXISTS login (
     fk_matricula_secretaria INT NOT NULL,
     fk_matricula_medico INT NOT NULL,
     senha VARCHAR(50) NOT NULL,
+    usuario VARCHAR(30) NOT NULL,
 
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
     FOREIGN KEY (fk_matricula_secretaria) REFERENCES secretaria(matricula_secretaria),
