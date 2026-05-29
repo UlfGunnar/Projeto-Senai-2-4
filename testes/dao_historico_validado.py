@@ -10,14 +10,15 @@ from DAO.classes import Historico
 dao = HistoricoDAO()
 
 historico = Historico(
-    1,
-    1,
+    None,
+    4,
     "12345678901",
     1,
+    34,
     "Remédio X",
     "Diagnóstico Y",
-    "2026-05-15",
-    "09:00:00"
+    "2026-06-19",
+    "08:30:00"
 )
 
 dao.inserir_historico(historico)

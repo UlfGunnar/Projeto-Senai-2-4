@@ -5,7 +5,6 @@ class ConsultaDAO:
         try:
             conn = get_connection() 
             cursor = conn.cursor()
-
             sql = """
             INSERT INTO consulta (
                 fk_matricula_medico, fk_animal, fk_cpf, fk_tipo_consulta, dt_consulta, hr_consulta

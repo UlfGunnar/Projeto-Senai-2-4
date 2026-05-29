@@ -8,8 +8,8 @@ class HistoricoDAO:
 
             sql = """
             INSERT INTO historico(
-                fk_animal, fk_tipo, fk_cpf, fk_consulta, remedio, diagnostico, fk_data, fk_hora
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                fk_animal, fk_tipo, fk_cpf, fk_consulta, remedio, diagnostico
+            ) VALUES (%s, %s, %s, %s, %s, %s)
             """
 
             valores = (
@@ -19,8 +19,6 @@ class HistoricoDAO:
                 historico.fk_consulta,
                 historico.remedio,
                 historico.diagnostico,
-                historico.fk_data,
-                historico.fk_hora
             )
 
             cursor.execute(sql, valores)

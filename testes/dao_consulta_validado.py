@@ -11,9 +11,9 @@ dao = ConsultaDAO()
 
 consulta = Consulta(
     None,
+    2,
     4,
     "12345678901",
-    2,
     1,
     "2026-06-19",
     "08:30:00"

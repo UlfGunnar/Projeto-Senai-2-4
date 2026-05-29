@@ -10,10 +10,10 @@ from DAO.classes import Login
 dao = LoginDAO()
 
 login = Login(
+    None,
     "12345678901",
     1,
-    1,
-    1,
+    2,
     "usuario_teste",
     "senha_teste"
 )
