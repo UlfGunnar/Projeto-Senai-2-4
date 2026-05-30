@@ -8,18 +8,19 @@ class MedicoDAO:
 
             sql = """
             INSERT INTO medico(
-                matricula_medico, nome, rua, complemento, data_nascimento, email, celular
+                matricula_medico, nome_medico, bairro, rua, complemento, dt_nascimento, email, num_celular
             ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """
 
             valores = (
                 medico.matricula_medico,
-                medico.nome,
-                medico.rua,
-                medico.complemento,
-                medico.data_nascimento,
+                medico.nome_medico,
+                medico.dt_nascimento,
+                medico.num_celular,
                 medico.email,
-                medico.celular
+                medico.bairro,
+                medico.rua,
+                medico.complemento
             )
 
             cursor.execute(sql, valores)

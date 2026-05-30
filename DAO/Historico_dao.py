@@ -1,27 +1,24 @@
 from connection.connection import get_connection
 
 class HistoricoDAO:
-    def inserir_historico(sel, historico):
+    def inserir_historico(self, historico):
         try:
             conn = get_connection()
             cursor = conn.cursor()
 
             sql = """
             INSERT INTO historico(
-                id_historico, id_animal, id_tipo, cpf, id_consulta, remedio, diagnostico, data_consulta, hora_consulta
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                fk_animal, fk_tipo, fk_cpf, fk_consulta, remedio, diagnostico
+            ) VALUES (%s, %s, %s, %s, %s, %s)
             """
 
             valores = (
-                historico.id_historico,
-                historico.id_animal,
-                historico.id_tipo,
-                historico.cpf,
-                historico.id_consulta,
+                historico.fk_animal,
+                historico.fk_tipo,
+                historico.fk_cpf,
+                historico.fk_consulta,
                 historico.remedio,
                 historico.diagnostico,
-                historico.data_consulta,
-                historico.hora_consulta
             )
 
             cursor.execute(sql, valores)

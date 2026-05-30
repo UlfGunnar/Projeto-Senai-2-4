@@ -1,19 +1,19 @@
-class Paciente():
-    def __init__(self, cpf: str,nome: str, email: str, num_casa: int, bairro: str, rua: str, num_tele: str, complemento: str ):
+class Cliente():
+    def __init__(self, cpf: str,nome_cliente: str, email: str, numero: int, bairro: str, rua: str, celular: str, complemento: str ):
+        self.nome_cliente = nome_cliente
         self.cpf = cpf
-        self.nome = nome
+        self.celular = celular
         self.email = email
-        self.num_casa = num_casa
         self.bairro = bairro
         self.rua = rua
-        self.num_tele = num_tele
         self.complemento = complemento
+        self.numero = numero
 
 class Animal():
-    def __init__(self, id_animal: int, cpf: str, nome: str, raca: str, especie: str, genero: str, peso: float):
+    def __init__(self, id_animal: int, fk_cpf: str, nome_animal: str, raca: str, especie: str, genero: str, peso: float):
         self.id_animal = id_animal
-        self.cpf = cpf
-        self.nome = nome
+        self.fk_cpf = fk_cpf
+        self.nome_animal = nome_animal
         self.raca = raca
         self.especie = especie
         self.genero = genero
@@ -21,63 +21,64 @@ class Animal():
         
 class Medico():
     #data_nasc = Date
-    def __init__(self, matricula_medico: int, nome: str, numero: str, rua: str, complemento: str, data_nasc, email: str):
+    def __init__(self, matricula_medico: int, nome_medico: str, num_celular: str, rua: str, complemento: str, dt_nascimento: str, email: str, bairro: str):
         self.matricula_medico = matricula_medico
-        self.nome = nome
-        self.numero = numero
+        self.nome_medico = nome_medico
+        self.dt_nascimento = dt_nascimento
+        self.num_celular = num_celular
+        self.email = email
+        self.bairro = bairro
         self.rua = rua
         self.complemento = complemento
-        self.data_nasc = data_nasc
-        self.email = email
 
 class Secretaria():
-    def __init__(self, matricula_secretaria: int, nome: str, data_nasc, email: str, rua: str, celular: str, complemento: str):
+    def __init__(self, matricula_secretaria: int, nome_secretaria: str, dt_nascimento: str, email: str, rua: str, num_celular: str, complemento: str, bairro: str):
         self.matricula_secretaria = matricula_secretaria
-        self.nome = nome
-        self.data_nasc = data_nasc
+        self.nome_secretaria = nome_secretaria
+        self.dt_nascimento = dt_nascimento
+        self.num_celular = num_celular
         self.email = email
+        self.bairro = bairro
         self.rua = rua
-        self.celular = celular
         self.complemento = complemento
-    
 class Consulta():
     #data = date
     #hora = date
-    def __init__(self, id_consulta: int, matricula_medico: int, id_animal: int, cpf: str, tipo_consulta: str, data, hora):
+    def __init__(self, id_consulta: int, fk_animal: int,  fk_cpf: str, fk_matricula_medico: int, fk_tipo_consulta: int, dt_consulta, hr_consulta):
         self.id_consulta = id_consulta
-        self.matricula_medico = matricula_medico
-        self.id_animal = id_animal
-        self.cpf = cpf
-        self.tipo_consulta = tipo_consulta
-        self.data = data
-        self.hora = hora
+        self.fk_animal = fk_animal
+        self.fk_cpf = fk_cpf
+        self.fk_matricula_medico = fk_matricula_medico
+        self.fk_tipo_consulta = fk_tipo_consulta
+        self.dt_consulta = dt_consulta
+        self.hr_consulta = hr_consulta
 
 class Tipo_de_consulta():
-    def __init__(self, id_tipo: int, id_consulta: int, tipo: str, valor: float):
+    def __init__(self, id_tipo: int, id_consulta: int, finalidade: str, valor: float):
         self.id_tipo = id_tipo
         self.id_consulta = id_consulta
-        self.tipo = tipo
+        self.finalidade = finalidade
         self.valor = valor
 
 class Login():
-    def __init__(self, id_conta: int, cpf: str, matricula_secretaria: int, matricula_medico: int, usuario: str, senha: str):
+    def __init__(self, id_conta: int, fk_cpf: str, fk_matricula_secretaria: int, fk_matricula_medico: int, senha: str):
         self.id_conta = id_conta
-        self.cpf = cpf
-        self.matricula_secretaria = matricula_secretaria
-        self.matricula_medico = matricula_medico
-        self.usuario = usuario
+        self.fk_cpf = fk_cpf
+        self.fk_matricula_secretaria = fk_matricula_secretaria
+        self.fk_matricula_medico = fk_matricula_medico
         self.senha = senha
 
 class Historico():
     #data_consulta = date
     #hora_consulta = date
-    def __init__(self, id_historico: int, id_animal: int, id_tipo: int, cpf: str, id_consulta: int, remedio: str, diagnostico: str, data_consulta, hora_consulta):
+    def __init__(self, id_historico: int, fk_animal: int, fk_cpf: str, fk_tipo: int, fk_consulta: int, diagnostico: str, remedio: str, data, hora):
         self.id_historico = id_historico
-        self.id_animal = id_animal
-        self.id_tipo = id_tipo
-        self.cpf = cpf
-        self.id_consulta = id_consulta
-        self.remedio = remedio
+        self.fk_animal = fk_animal
+        self.fk_cpf = fk_cpf
+        self.fk_tipo = fk_tipo
+        self.fk_consulta = fk_consulta
         self.diagnostico = diagnostico
-        self.data_consulta = data_consulta
-        self.hora_consulta = hora_consulta
+        self.remedio = remedio
+        self.data = data
+        self.hora = hora
+

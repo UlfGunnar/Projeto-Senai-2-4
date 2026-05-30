@@ -9,14 +9,13 @@ class TiposDeConsultaDAO:
 
             sql = """
             INSERT INTO tipo_consulta (
-                id_tipo, id_consulta, tipo, valor
-            ) VALUES (%s, %s, %s, %s)
+                id_consulta, finalidade, valor
+            ) VALUES (%s, %s, %s)
             """
 
             valores = (
-                tipo_consulta.id_tipo,
                 tipo_consulta.id_consulta,
-                tipo_consulta.tipo,
+                tipo_consulta.finalidade,
                 tipo_consulta.valor
             )
 

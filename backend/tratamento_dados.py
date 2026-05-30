@@ -1,35 +1,38 @@
-class ValidadorSeguranca:
-
-    def verificar_senha(self, teste_senha: str):
-        # Print para mostrar qual senha está sendo analisada no momento
-        print(f"\n[ANÁLISE] Testando a senha: '{teste_senha}'")
-        
-        # Correção: usando os parênteses () para o Python executar a função
-        if teste_senha.isalnum():
-            print(" -> Resultado: A senha contém APENAS letras e números.")
-            print(" -> Ação: REJEITADA (Falta caractere especial). Retornando False.")
-            return False
-        else:
-            print(" -> Resultado: A senha POSSUI caracteres especiais (ex: @, !, #).")
-            print(" -> Ação: APROVADA! Retornando True.")
+from flask import flash
+import re
+# Registro
+"""""
+6 caracteres minimos
+1 caracter especial
+"""""
+def validar_senha(self, senha): #
+    self.senha = senha
+    senha_sem_espaço = senha.replace(" ", "")
+    senha_especial = any(not c.isalnum() for c in senha_sem_espaço)
+    if senha_especial and len(senha_sem_espaço) >= 6:
+        return True
+    else:
+        return False
+    
+class validar_nome: #validado, vai devolver o nome sem espaços (corretamente) "igor flores"
+    def validar_nome(self, nome):
+        self.nome = nome.strip()
+        if self.nome.replace(" ", "").isalpha():
             return True
+        else:
+            return False
+    
+def validar_celular(self, numero, numero_tratado):
+    self.numero = numero
+    self.numero_tratado
+    try:
+        numero_tratado = re.sub(r"\D", "", numero)
+    except (NameError, TypeError):
+        return False
+    if len(numero_tratado) == 11:
+        return True
+    else:
+        return False
 
-
-# =====================================================================
-# ÁREA DE TESTES (Fora da classe)
-# =====================================================================
-validador = ValidadorSeguranca()
-
-print("=== INICIANDO OS TESTES DE SENHA ===")
-
-# Teste 1: Uma senha que DEVE SER REJEITADA (só tem letras e números)
-resultado_1 = validador.verificar_senha("xebinhas123")
-print(f" Retorno da função no Teste 1: {resultado_1}")
-
-print("-" * 40)
-
-# Teste 2: A sua senha com '@' que DEVE SER APROVADA
-resultado_2 = validador.verificar_senha("xebinhas@123")
-print(f" Retorno da função no Teste 2: {resultado_2}")
-
-print("\n=== FIM DOS TESTES ===")
+def validar_email(self, email):
+    self.email = email
