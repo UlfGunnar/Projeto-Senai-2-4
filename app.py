@@ -72,7 +72,7 @@ def sair_login():
 def marcar_consulta_page():
     return render_template('Marcar_consulta.html')
 
-@app.route('/Voltar_menu_cliente', methods=['GET'])
+@app.route('/Voltar', methods=['GET'])
 def processar_voltar_menu_cliente():
     return redirect(url_for('menu_cliente_page'))
 
