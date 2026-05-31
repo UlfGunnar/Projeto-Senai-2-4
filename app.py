@@ -112,6 +112,13 @@ def acompanhar_consulta_page():
 def historico_page():
     return render_template('historico.html')
 
+@app.route('/filtro', methods=['POST'])
+def processar_filtro():
+    filtro = request.form.get('txt_filtro')
+    print(filtro)
+
+    return redirect(url_for('historico_page'))
+
 #---------------------#
 #---------APP---------#
 #---------------------#
