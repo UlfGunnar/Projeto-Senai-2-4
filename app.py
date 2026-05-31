@@ -115,7 +115,6 @@ def historico_page():
 @app.route('/filtro', methods=['POST'])
 def processar_filtro():
     filtro = request.form.get('txt_filtro')
-    print(filtro)
 
     return redirect(url_for('historico_page'))
 
