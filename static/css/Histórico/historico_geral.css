@@ -129,3 +129,44 @@ thead > tr {
     max-height: 400px;
     overflow-y: auto;
 }
+
+form#filtro {
+    margin-bottom: 15px;
+}
+
+input {
+    height: 30px;
+    margin: 5px 0px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid gray;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #64c27b;
+    box-shadow: 0px 0px 5px #64c27b;
+}
+
+form > button#form {
+    width: 120px;
+    height: 35px;
+    background-color: #2A8C4A;
+    color: white;
+    border: 1px solid gray(0, 0, 0, 0.781);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+form > button#form:hover {
+    background-color: #9BFAB0;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+main > section#register > form > button#form:active {
+    background-color: #136930;
+}

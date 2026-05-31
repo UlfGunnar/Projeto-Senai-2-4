@@ -1,0 +1,54 @@
+/* Configurações desktop */
+
+@charset 'UTF-8';
+
+body {
+    background-image: url('../../Images/tela_historico_paisagem.png');
+    background-position: center center;
+    background-size: cover;
+}
+
+main {
+    width: 700px;
+    height: 450px;
+    padding: 20px 40px;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+button {
+    margin: 0px 15px;
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+}
+
+button#Salvar {
+    margin-top: 15px;
+}
+
+img#sair {
+    width: 60px;
+    height: 60px;
+}
+
+button#sair_botao {
+    margin-right: 0px;
+}
+
+img#botao_voltar {
+    width: 75px;
+    height: 75px;
+    margin-top: 15px;
+}
+
+fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+}
