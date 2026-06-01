@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>      
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register/Register_geral.css') }}" media="all">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register/Register_retrato.css') }}" media="screen and (orientation: portrait)">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register/Register_paisagem.css') }}" media="screen and (orientation: landscape)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register_func/Register_func_geral.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register_func/Register_func_retrato.css') }}" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register_func/Register_func_paisagem.css') }}" media="screen and (orientation: landscape)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='Images/icone.ico') }}" type="image/x-icon">
 </head>
 <body>
     <header>
         <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo">
-        <h1>Tela de registro</h1>
+        <h1>Registro de funcionário</h1>
     </header>
     <main>
         <h2>Cadastrar Conta</h2>
@@ -25,6 +25,10 @@
                         <input type="text" name="nome_register" id="nome" placeholder="Nome completo" required>
                         <input type="text" name="cpf_register" id="cpf" placeholder="CPF" required>
                         <input type="password" name="senha_register" id="senha" placeholder="••••••••" required>
+                        <label for="data_nasc" class="input_nascimento">
+                            Data de Nascimento
+                            <input type="date" name="nasc_register" id="data_nasc">
+                        </label>
                     </fieldset>
                     <fieldset>
                         <legend>Contato</legend>
@@ -35,7 +39,6 @@
                         <legend>Endereço</legend>
                         <input type="text" name="bairro_register" id="bairro" placeholder="Bairro">
                         <input type="text" name="rua_register" id="rua" placeholder="Rua">
-                        <input type="text" name="numero_register" id="numero" placeholder="Número">
                         <input type="text" name="complemento_register" id="complemento" placeholder="Complemento">
                     </fieldset>
                 </div>
