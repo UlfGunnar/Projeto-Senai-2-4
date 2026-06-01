@@ -29,29 +29,38 @@ CREATE TABLE IF NOT EXISTS animal (
 ) 
 default charset = utf8;
 
-CREATE TABLE IF NOT EXISTS medico ( 
-	
-    matricula_medico INT AUTO_INCREMENT PRIMARY KEY,
-    nome_medico VARCHAR(60) NOT NULL,
-    num_celular CHAR(11),
-    email VARCHAR(80) NOT NULL,
-    bairro VARCHAR(20) NOT NULL,
-    rua CHAR(50) NOT NULL,
-    complemento VARCHAR(50),
-    dt_nascimento DATE NOT NULL 
-)
-default charset = utf8;
-
-CREATE TABLE IF NOT EXISTS secretaria (
-	
-    matricula_secretaria INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    nome_secretaria VARCHAR(60) NOT NULL,
+CREATE TABLE IF NOT EXISTS funcionarios (
+    
+    id_funcionario INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome_funcionario VARCHAR(60) NOT NULL,
     num_celular CHAR(11) NOT NULL,
     email VARCHAR(80) NOT NULL,
     bairro VARCHAR(20) NOT NULL,
     rua CHAR(50) NOT NULL,
     complemento VARCHAR(50),
     dt_nascimento DATE NOT NULL
+
+)
+default charset = utf8;
+
+CREATE TABLE IF NOT EXISTS cargo (
+
+    id_cargo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome_cargo VARCHAR(20) NOT NULL
+)
+default charset = utf8;
+
+CREATE TABLE IF NOT EXISTS login (
+
+    id_login INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    fk_id_funcionario INT NOT NULL,
+    senha VARCHAR(6) NOT NULL,
+    fk_cpf CHAR(11) NOT NULL,
+    fk_cargo INT NOT NULL,
+
+    FOREIGN KEY (fk_id_funcionario) REFERENCES funcionarios(id_funcionario),
+    FOREIGN KEY (fk_cpf) REFERENCES cliente(cpf),
+    FOREIGN KEY (fk_cargo) REFERENCES cargo(id_cargo)    
 )
 default charset = utf8;
 
@@ -78,21 +87,6 @@ CREATE TABLE IF NOT EXISTS consulta (
 	FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
     FOREIGN KEY (fk_tipo_consulta) REFERENCES tipo_consulta(id_tipo)
-)
-default charset = utf8;
-
-CREATE TABLE IF NOT EXISTS login (
-
-    id_conta INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    fk_cpf CHAR(11) NOT NULL,
-    fk_matricula_secretaria INT NOT NULL,
-    fk_matricula_medico INT NOT NULL,
-    senha VARCHAR(50) NOT NULL,
-    usuario VARCHAR(30) NOT NULL,
-
-    FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
-    FOREIGN KEY (fk_matricula_secretaria) REFERENCES secretaria(matricula_secretaria),
-    FOREIGN KEY (fk_matricula_medico) REFERENCES medico(matricula_medico)
 )
 default charset = utf8;
 
