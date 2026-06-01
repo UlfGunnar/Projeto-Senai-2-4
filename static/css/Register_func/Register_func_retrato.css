@@ -1,0 +1,26 @@
+/* Configurações de estilo para celular */
+
+@charset 'UTF-8';
+
+body {
+    background-image: url('../../Images/tela_registro_funcionario_retrato.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    padding: 60px 15px;
+    width: 250px;
+    height: 600px;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+

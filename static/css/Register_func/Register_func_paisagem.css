@@ -1,0 +1,37 @@
+/* Configurações para desktop */
+
+@charset 'UTF-8';
+
+body {
+    background-repeat: no-repeat;
+    background-image: url('../../Images/tela_registro_funcionario_paisagem.png');
+    background-position: center center;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+main {
+    width: 650px;
+    height: 350px;
+    padding: 45px 15px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    margin-top: 15px;
+    
+}
+label {
+    margin: 5px 0;
+}
