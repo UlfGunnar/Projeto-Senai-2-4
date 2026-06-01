@@ -1,0 +1,63 @@
+simplesmente um arquivo para explicar os imports que eu utilizei e suas funções.
+
+IMPORT RE
+
+- permite trabalhar com *expressões regulares*
+    - expressões regulares são padrões utilizados para procurar, validar, substituir ou extrair informações de textos
+
+(ALGUNS EXEMPLOS DE USO)
+
+- verificar se alguma string está em formato válido (utilizamos pra isso)
+- procurar palavras especificas dentro de um texto
+- substituir partes de uma string
+- extrair numeros, datas, etc de um texto.
+
+FUNÇÕES UTILIZADAS
+
+- re.sub(r"\D", "", numero) 
+    (re.sub) está substituindo o número de telefone por uma versão sem caractere especial nem nada do tipo (conforme está escrito no backend)
+        r/"D" está representando caracteres que não são números
+        "" está indicando que tudo que não é número vai ser removido
+
+- rua_padrao = r"^[A-Za-zÀ-ÿ0-9\s\-\.'ºª]+$"
+    esse é mais complexo, mas basicamente indica os caracteres que serão aceitos.
+    segue a lista do que cada um tá fazendo ali
+    ^ - indica que a verificação começa ali (no primeiro caractere da string)
+    A-Z - aceita letras maíusculas
+    a-z - aceita letras mínusculas
+    À-ÿ - aceita acentos
+    0-9 - aceita números de 0 a 9 
+    \s\-\.'ºª permite espaços, barras, hífens, aspas, masculino e feminino
+    + - indica que o padrão anterior (as coisas em cima) precisam aparecer pelo menos uma vez (não aceita strings vazias)
+    $ - indica que a verificação termina no ultimo caractere da string
+
+- re.fullmatch
+    verifica se a string INTEIRA segue o padrão informado
+
+
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+
+FROM EMAIL_VALIDATOR IMPORT VALIDATE_EMAIL, EMAILNOTVALIDERROR
+
+- biblioteca pra validar emails (não tem muito o que falar)
+
+EXEMPLOS DE USO
+
+- validar emails (eu sei que é meio inútil essa seção. (mas é pra manter um padrão))
+
+FUNÇÕES UTILIZADAS
+
+- validate_email
+    verifica se o email tem formato válido
+    se o domínio está escrito corretamente (aceita apenas domínios de fato existentes)
+    o endereço segue o padrão esperado pra um email
+
+- normalized 
+    retorna uma versão padronizada do email
+    remove espaços desnecessários
+    ajusta letras maiusculas e minusculas
+
+- EMAILNOTVALIDERROR 
+    indica que não deu certo (também não tem muito o que falar)
