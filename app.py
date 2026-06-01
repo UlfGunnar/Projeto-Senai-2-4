@@ -27,19 +27,27 @@ def register_page():
 
 @app.route('/register', methods=['POST'])
 def processar_register():
-    nome = request.form.get('nome_register')
-    cpf = request.form.get('cpf_register')
-    senha = request.form.get('senha_register')
+    nome        = request.form.get('nome_register')
+    cpf         = request.form.get('cpf_register')
+    senha       = request.form.get('senha_register')
 
-    celular = request.form.get('celular_register')
-    email = request.form.get('email_register')
+    celular     = request.form.get('celular_register')
+    email       = request.form.get('email_register')
 
-    bairro = request.form.get('bairro_register')
-    rua = request.form.get('rua_register')
-    numero = request.form.get('numero_register')
+    bairro      = request.form.get('bairro_register')
+    rua         = request.form.get('rua_register')
+    numero      = request.form.get('numero_register')
     complemento = request.form.get('complemento_register')
     
     return redirect(url_for('register_page'))
+
+#---------------------------------------#
+#---------REGISTRAR FUNCIONÁRIO---------#
+#---------------------------------------#
+
+@app.route('/registrar_funcionario')
+def register_func_page():
+    return render_template('Register_funcionario.html')
 
 #------------------------------#
 #---------MENU CLIENTE---------#
