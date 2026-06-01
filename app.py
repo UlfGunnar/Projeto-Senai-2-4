@@ -28,6 +28,7 @@ def register_page():
 @app.route('/register', methods=['POST'])
 def processar_register():
     nome = request.form.get('nome_register')
+    cpf = request.form.get('cpf_register')
     senha = request.form.get('senha_register')
 
     celular = request.form.get('celular_register')
