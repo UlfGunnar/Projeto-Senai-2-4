@@ -8,16 +8,15 @@ class LoginDAO:
 
             sql = """
             INSERT INTO login( 
-                fk_cpf, fk_matricula_secretaria, fk_matricula_medico, usuario, senha
-            ) VALUES (%s, %s, %s, %s, %s)
+                fk_funcionario, senha, fk_cpf, fk_cargo
+            ) VALUES (%s, %s, %s, %s)
             """
 
             valores = (
+                  login.fk_funcionario,
+                  login.senha,
                   login.fk_cpf,
-                  login.fk_matricula_secretaria,
-                  login.fk_matricula_medico,
-                  login.usuario,
-                  login.senha
+                  login.fk_cargo
             )
 
             cursor.execute(sql, valores)
