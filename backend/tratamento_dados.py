@@ -85,12 +85,19 @@ def complemento(complemento): #tá dale (2)
     valor_regular = r"[A-Za-zÀ-ÿ0-9,.\-/]+(\s[A-Za-zÀ-ÿ0-9,.\-/]+)*" #é um padrão indicando o que é aceito
     return bool(re.fullmatch(valor_regular, complemento)) #verifica se tá compatível com o que é aceito
 
-def validar_cpf(cpf):
+def validar_cpf(cpf): #tá indo
     #11 dígitos
     #só número
-    cpf = cpf.strip()
-    if cpf.isdecimal() and len(cpf) == 11:
+    cpf = cpf.strip()# tira espaço do lado
+    if cpf.isdecimal() and len(cpf) == 11: #só garante que vai seguir o padrão que a gente quer
         return True
     else:
         return False
+
+#------------------------------------
+#VALIDAÇÃO DA TELA DE MARCAR CONSULTA
+#------------------------------------
+
+
+
 
