@@ -115,7 +115,6 @@ def processar_marcar_consulta():
     complemento_consulta    = request.form.get('complemento_register')
     proprio_endereco        = request.form.get('endereco')
 
-    # não tem required nos inputs, pois alguns não aceitam, backend terá que checar se possuiem algum valor 
 
     return redirect(url_for('marcar_consulta_page'))
 
