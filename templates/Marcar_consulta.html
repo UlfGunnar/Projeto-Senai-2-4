@@ -25,30 +25,30 @@
         <form action="agendar">
             <fieldset>
                 <Legend>Animal</Legend>
-                <select name="select_tipo_consulta" class="caixa_texto">
+                <select name="select_tipo_consulta" class="caixa_texto" required>
                     <option selected disabled>Selecione o tipo de consulta...</option>
                     <option value="1">Check-up</option>
                     <option value="2">Consulta Pediatrica</option>
                     <option value="3">Consulta Geriatrica</option>
                 </select>
-                <select name="select_especie" id="option_especie" class="caixa_texto">
+                <select name="select_especie" id="option_especie" class="caixa_texto" required>
                     <option selected disabled>Selecione a espécie...</option>
-                    <option value="1">Cachorro</option>
-                    <option value="2">Gato</option>
-                    <option value="3">Passáro</option>
-                    <option value="4">Cavalo</option>
-                    <option value="5">Porco</option>
-                    <option value="6">Vaca</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Passáro">Passáro</option>
+                    <option value="Cavalo">Cavalo</option>
+                    <option value="Porco">Porco</option>
+                    <option value="Vaca">Vaca</option>
                     <option value="0">Outro</option>
                 </select>
                 <input type="text" name="outro_animal" id="form_especie" placeholder="espécie do seu pet" class="caixa_texto">
-                <input type="text" name="nome_animal" placeholder="Nome do seu pet" class="caixa_texto">
+                <input type="text" name="nome_animal" placeholder="Nome do seu pet" class="caixa_texto" required>
             </fieldset>
 
             <fieldset>
                 <legend>Horário</legend>
-                <input type="date" name="" id="" class="caixa_texto">
-                <select name="horario" class="caixa_texto">
+                <input type="date" name="form_data" id="" class="caixa_texto">
+                <select name="horario" class="caixa_texto" required>
                     <option selected disabled>Selecione o horário...</option>
                     <option value="08:00">08:00</option>
                     <option value="09:00">09:00</option>
@@ -69,8 +69,7 @@
                 Consulta Residencial
             </label>
 
-            <!-- FAZER O IF CASO O USUÁRIO NÃO TENHA CRIADO A CONTA COM ENDEREÇO -->
-
+            <!-- APENAS ESTE TEM QUE VERIFICAR SE É NOT NULL -->
             <fieldset id="form_endereco">
                 <legend>Endereço</legend>
                 <input type="text" name="bairro_register" id="bairro" placeholder="Bairro" class="caixa_texto">
