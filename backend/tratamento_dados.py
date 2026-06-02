@@ -89,12 +89,8 @@ def validar_cpf(cpf):
     #11 dígitos
     #só número
     cpf = cpf.strip()
-    
-
-
-#------------------------------------
-#VALIDAÇÃO DA TELA DE MARCAR CONSULTA
-#------------------------------------
-
-#olhar html e app.py
+    if cpf.isdecimal() and len(cpf) == 11:
+        return True
+    else:
+        return False
 
