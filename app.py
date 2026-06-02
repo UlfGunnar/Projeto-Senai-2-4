@@ -55,6 +55,7 @@ def processar_register_func():
     cpf         = request.form.get('cpf_register')
     senha       = request.form.get('senha_register')
     data_nasc   = request.form.get('nasc_register')
+    cargo       = request.form.get('cargo_register')
 
     celular     = request.form.get('celular_register')
     email       = request.form.get('email_register')
@@ -86,6 +87,14 @@ def processar_menu_cliente_verificar_historico():
 @app.route('/sair', methods=['GET'])
 def sair_login():
     return redirect(url_for('login_page'))
+
+#----------------------------------#
+#---------MENU FUNCIONÁRIO---------#
+#----------------------------------#
+
+@app.route('/menu_funcionario')
+def menu_funcionario_page():
+    return render_template('Menu_funcionario.html')
 
 #---------------------------------#
 #---------MARCAR CONSULTA---------#
