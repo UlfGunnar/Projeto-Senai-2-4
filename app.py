@@ -96,6 +96,18 @@ def sair_login():
 def menu_funcionario_page():
     return render_template('Menu_funcionario.html')
 
+@app.route('/menu_fucionario_gerenciar_consulta', methods=['GET'])
+def processar_menu_funcionario_gerenciar_consulta():
+    return redirect(url_for('gerenciar_consulta_page'))
+
+#-------------------------------------#
+#---------GERENCIAR CONSULTAS---------#
+#-------------------------------------#
+
+@app.route('/Gerenciar_consulta')
+def gerenciar_consulta_page():
+    return render_template('Gerenciar_consulta.html')
+
 #---------------------------------#
 #---------MARCAR CONSULTA---------#
 #---------------------------------#
