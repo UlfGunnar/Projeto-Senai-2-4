@@ -53,12 +53,12 @@ default charset = utf8;
 CREATE TABLE IF NOT EXISTS login (
 
     id_login INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    fk_id_funcionario INT NOT NULL,
+    fk_funcionario INT NOT NULL,
     senha VARCHAR(6) NOT NULL,
     fk_cpf CHAR(11) NOT NULL,
     fk_cargo INT NOT NULL,
 
-    FOREIGN KEY (fk_id_funcionario) REFERENCES funcionarios(id_funcionario),
+    FOREIGN KEY (fk_funcionario) REFERENCES funcionarios(id_funcionario),
     FOREIGN KEY (fk_cpf) REFERENCES cliente(cpf),
     FOREIGN KEY (fk_cargo) REFERENCES cargo(id_cargo)    
 )
@@ -76,14 +76,14 @@ default charset = utf8;
 CREATE TABLE IF NOT EXISTS consulta (
 	
 	id_consulta INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    fk_matricula_medico INT NOT NULL,
+    fk_funcionario INT NOT NULL,
     fk_animal INT NOT NULL,
     fk_cpf CHAR(11) NOT NULL,
 	fk_tipo_consulta INT NOT NULL,
     dt_consulta DATE NOT NULL,
     hr_consulta TIME NOT NULL,
 		
-    FOREIGN KEY (fk_matricula_medico) REFERENCES medico(matricula_medico),
+    FOREIGN KEY (fk_funcionario) REFERENCES funcionarios(id_funcionario),
 	FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
     FOREIGN KEY (fk_tipo_consulta) REFERENCES tipo_consulta(id_tipo)

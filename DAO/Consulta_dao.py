@@ -7,14 +7,14 @@ class ConsultaDAO:
             cursor = conn.cursor()
             sql = """
             INSERT INTO consulta (
-                fk_matricula_medico, fk_animal, fk_cpf, fk_tipo_consulta, dt_consulta, hr_consulta
+                fk_funcionario, fk_animal, fk_cpf, fk_tipo_consulta, dt_consulta, hr_consulta
             ) VALUES (%s, %s, %s, %s, %s, %s)
             """
 
             valores = (
                 consulta.fk_animal,
                 consulta.fk_cpf,
-                consulta.fk_matricula_medico,
+                consulta.fk_funcionario,
                 consulta.fk_tipo_consulta,
                 consulta.dt_consulta,
                 consulta.hr_consulta
