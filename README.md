@@ -8,7 +8,7 @@ Colaborações (usuário do github):
 
     • UlfGunnar: Front-end
 
-    • peidinho: Banco de dados e DAO
+    • pedrolucasrodri: Banco de dados e DAO
 
     • IgorFlores123: Back-end
 
