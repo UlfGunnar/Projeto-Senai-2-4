@@ -7,7 +7,7 @@ INSERT INTO funcionarios (
     bairro, 
     rua, 
     complemento, 
-    dt_nasciment
+    dt_nascimento
 )
 
 VALUES (
@@ -27,7 +27,7 @@ INSERT INTO funcionarios (
     bairro, 
     rua, 
     complemento, 
-    dt_nasciment
+    dt_nascimento
 )
 
 VALUES (
@@ -38,7 +38,7 @@ VALUES (
     'Rua dos colnos',
     'Oca Nº5',
     '1976-12-07'
-)
+);
 
 INSERT INTO funcionarios (
     nome_funcionario, 
@@ -47,7 +47,7 @@ INSERT INTO funcionarios (
     bairro, 
     rua, 
     complemento, 
-    dt_nasciment
+    dt_nascimento
 )
 
 VALUES (
@@ -58,4 +58,7 @@ VALUES (
     'Rua do gas',
     'Pavilhão 1',
     '2004-11-17'
-)
+);
+
+-- Corrigido nome da coluna de data de nascimento que estáva errada
+-- Corrigido problema de syntax, falta de virgulas e pontos virgulas (tomar cuidado)

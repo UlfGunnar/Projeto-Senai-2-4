@@ -2,6 +2,8 @@ CREATE DATABASE IF NOT EXISTS db_dogtor
 default character set utf8
 default collate utf8_general_ci;
 
+use db_dogtor; -- Caso rode o script inteiro, para selecionar o banco de dados
+ 
 CREATE TABLE IF NOT EXISTS cliente (
     
     cpf CHAR(11) NOT NULL PRIMARY KEY,
@@ -53,10 +55,12 @@ default charset = utf8;
 CREATE TABLE IF NOT EXISTS login (
 
     id_login INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    fk_funcionario INT NOT NULL,
+    fk_funcionario INT ,
     senha VARCHAR(6) NOT NULL,
-    fk_cpf CHAR(11) NOT NULL,
-    fk_cargo INT NOT NULL,
+    fk_cpf CHAR(11) ,
+    fk_cargo INT,
+
+    -- Retirado o Not null das FK, pois elas podem ser nulas, o cliente não vai ter fk do funcionário e cargo por exemplos.
 
     FOREIGN KEY (fk_funcionario) REFERENCES funcionarios(id_funcionario),
     FOREIGN KEY (fk_cpf) REFERENCES cliente(cpf),
