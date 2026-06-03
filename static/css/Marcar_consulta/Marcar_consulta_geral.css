@@ -120,14 +120,14 @@ label#proprio_endereco {
 input, select {
     height: 25px;
     width: 200px;
-    margin: 1px 0px;
+    margin: 5px 5px;
     padding-left: 5px;
     border-radius: 5px;
     border-style: none;
     border: 1px solid gray;
 }
 
-input:focus.select, select:focus.caixa_texto {
+input:focus, select:focus.caixa_texto {
     outline: none;
     border: 1px solid #64c27b;
     box-shadow: 0px 0px 5px #64c27b;
