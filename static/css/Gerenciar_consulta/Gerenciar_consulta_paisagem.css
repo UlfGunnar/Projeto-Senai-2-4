@@ -3,7 +3,7 @@
 @charset 'UTF-8';
 
 body {
-    background-image: url('../../Images/Tela_marcar_consulta_paisagem.png');
+    background-image: url('../../Images/tela_gerenciar_consulta_paisagem.png');
     background-position: center center;
     background-size: cover;
 }
@@ -11,12 +11,9 @@ body {
 main {
     width: 700px;
     height: 450px;
-    padding: 0px 100px;
+    padding: 40px 150px;
     flex-direction: column;
-}
-
-h2 {
-    font-size: 30px;
+    margin-top: 120px;
 }
 
 button {
@@ -45,9 +42,12 @@ img#botao_voltar {
     margin-top: 15px;
 }
 
-fieldset {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 450px;
+.btn_delete, .btn_update {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+}
+
+.action-container {
+    margin-bottom: 10px;
 }

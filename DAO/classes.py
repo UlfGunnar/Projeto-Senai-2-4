@@ -19,28 +19,23 @@ class Animal():
         self.genero = genero
         self.peso = peso
         
-class Medico():
-    #data_nasc = Date
-    def __init__(self, matricula_medico: int, nome_medico: str, num_celular: str, rua: str, complemento: str, dt_nascimento: str, email: str, bairro: str):
-        self.matricula_medico = matricula_medico
-        self.nome_medico = nome_medico
-        self.dt_nascimento = dt_nascimento
-        self.num_celular = num_celular
+class funcionario():
+    #data_nasc = date
+    def __init__(self, id_funcionario: int, nome_func: str, num_cel: str, email: str, bairro: str, rua: str, complemento: str, data_nasc):
+        self.id_funcionario = id_funcionario
+        self.nome_func = nome_func
+        self.num_cel = num_cel
         self.email = email
         self.bairro = bairro
         self.rua = rua
         self.complemento = complemento
-
-class Secretaria():
-    def __init__(self, matricula_secretaria: int, nome_secretaria: str, dt_nascimento: str, email: str, rua: str, num_celular: str, complemento: str, bairro: str):
-        self.matricula_secretaria = matricula_secretaria
-        self.nome_secretaria = nome_secretaria
-        self.dt_nascimento = dt_nascimento
-        self.num_celular = num_celular
-        self.email = email
-        self.bairro = bairro
-        self.rua = rua
-        self.complemento = complemento
+        self.data_nasc = data_nasc
+        
+class cargo():
+    def __init__(self, id_cargo: int, nome_cargo: str):
+        self.id_cargo = id_cargo
+        self.nome_cargo = nome_cargo
+        
 class Consulta():
     #data = date
     #hora = date
@@ -61,12 +56,13 @@ class Tipo_de_consulta():
         self.valor = valor
 
 class Login():
-    def __init__(self, id_conta: int, fk_cpf: str, fk_matricula_secretaria: int, fk_matricula_medico: int, senha: str):
-        self.id_conta = id_conta
-        self.fk_cpf = fk_cpf
-        self.fk_matricula_secretaria = fk_matricula_secretaria
-        self.fk_matricula_medico = fk_matricula_medico
+    def __init__(self, id_login: int, fk_funcionario: int, fk_cpf: str, fk_cargo: int, senha: str):
+        self.id_login = id_login
+        self.fk_funcionario = fk_funcionario
         self.senha = senha
+        self.fk_cpf = fk_cpf
+        self.fk_cargo = fk_cargo
+        
 
 class Historico():
     #data_consulta = date

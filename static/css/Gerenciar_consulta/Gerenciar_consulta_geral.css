@@ -130,3 +130,81 @@ thead > tr {
     max-height: 400px;
     overflow-y: auto;
 }
+
+.action-container {
+    margin-bottom: 5px;
+}
+
+div > button {
+    width: 120px;
+    height: 45px;
+    background-color: #2A8C4A;
+    color: white;
+    border: 1px solid gray(0, 0, 0, 0.781);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+div > button:hover {
+    background-color: #9BFAB0;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+div.action-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+div > button:active {
+    background-color: #136930;
+}
+
+ input {
+    height: 43px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border-style: none;
+    border: 1px solid gray;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #64c27b;
+    box-shadow: 0px 0px 5px #64c27b;
+} 
+label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.btn_delete, .btn_update {
+    border-radius: 10px;
+}
+
+.btn_delete {
+    background-color: lightcoral;
+}
+
+.btn_update {
+    background-color: lightblue;
+}
+
+.btn_delete:hover {
+    background-color: red;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+.btn_update:hover {
+    background-color: rgb(71, 71, 255);
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}

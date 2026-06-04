@@ -8,10 +8,10 @@ INSERT INTO login (
 )
 
 VALUES (
-    NONE,
-    'Lune@2'
+    NULL,
+    'Lune@2',
     '12345678900',
-    NONE
+    NULL
 )
 
 INSERT INTO login (
@@ -23,7 +23,11 @@ INSERT INTO login (
 
 VALUES (
     1,
-    'Igor@1'
-    NONE,
-    'veterinario'
+    'Igor@1',
+    NULL,
+    '1'
 )
+
+-- Trocado NONE para NULL, pois MYSQL não permite o NONE
+-- Correção de syntax, foi esquecido algumas virgulas e pontos virgulas para encerrar comando (tomar mais cuidado)
+-- a fk cargo recebe número int, então deve ser add a pk do cargo e não 'veterinário'. O que você tinha colocado antes

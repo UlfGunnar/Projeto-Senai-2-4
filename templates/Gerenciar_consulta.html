@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Consultas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Gerenciar_consulta/Gerenciar_consulta_geral.css') }}" media="all">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Gerenciar_consulta/Gerenciar_consulta_retrato.css') }}" media="screen and (orientation: portrait)">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Gerenciar_consulta/Gerenciar_consulta_paisagem.css') }}" media="screen and (orientation: landscape)">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Images/icone.ico') }}" type="image/x-icon">
+</head>
+<body>
+     <header>
+        <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo" srcset="">
+        <h1>Gerenciar Consultas</h1>
+        <form action="sair" method="get">
+            <abbr title="Sair">
+                <button type="submit" id="sair_botao">
+                    <img src="{{ url_for('static', filename='Images/simbolo_sair.png') }}" alt="" id="sair">
+                </button>
+            </abbr>
+        </form>
+    </header>
+    <main>
+        <div class="action-container">
+            <button type="submit">Realizar Consulta</button>
+            <input type="text" name="" id="" placeholder="Filtro...">
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nome pet</th>
+                        <th>Tutor</th>
+                        <th>Tipo consulta</th>
+                        <th>Data da consulta</th>
+                        <th>Atualizar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Rex</td>
+                        <td>Lucas</td>
+                        <td>Check-up</td>
+                        <td>31/03/2005</td>
+                        <td><button type="submit" class="btn_update">Concluir</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mel</td>
+                        <td>Ana Paula</td>
+                        <td>Vacinação</td>
+                        <td>12/05/2024</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bolt</td>
+                        <td>Carlos Eduardo</td>
+                        <td>Cirurgia</td>
+                        <td>07/01/2025</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Nina</td>
+                        <td>Fernanda</td>
+                        <td>Retorno</td>
+                        <td>22/08/2024</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Toby</td>
+                        <td>Roberto</td>
+                        <td>Consulta dermatológica</td>
+                        <td>15/11/2024</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Luna</td>
+                        <td>Juliana</td>
+                        <td>Check-up</td>
+                        <td>03/02/2025</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Thor</td>
+                        <td>Marcos</td>
+                        <td>Castração</td>
+                        <td>19/06/2024</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Pérola</td>
+                        <td>Tatiane</td>
+                        <td>Vacinação</td>
+                        <td>28/09/2024</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Max</td>
+                        <td>Diego</td>
+                        <td>Emergência</td>
+                        <td>05/12/2024</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Mia</td>
+                        <td>Beatriz</td>
+                        <td>Consulta nutricional</td>
+                        <td>14/03/2025</td>
+                        <td><button type="submit" class="btn_update">Atualizar</button></td>
+                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <form action="Voltar">
+            <button type="submit" id="btn_voltar">
+                <img src="{{ url_for('static', filename='Images/botao_voltar.png') }}" alt="botão de voltar" srcset="" id="botao_voltar">
+            </button>
+        </form>
+    </footer>
+</body>
+</html>

@@ -8,11 +8,11 @@ Colaborações (usuário do github):
 
     • UlfGunnar: Front-end
 
-    • pedrolucasrodri: Banco de dadas e DAO
+    • pedrolucasrodri: Banco de dados e DAO
 
     • IgorFlores123: Back-end
 
-    • flucassb16: Documentações
+    • Lucasbatista11: Documentações
 
 
 
