@@ -66,8 +66,7 @@ default charset = utf8;
 
 CREATE TABLE IF NOT EXISTS tipo_consulta (
 	
-    id_tipo INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    id_consulta INT NOT NULL,
+    id_consulta INT NOT NULL PRIMARY KEY,
 	finalidade VARCHAR(20),
     valor DECIMAL(7,2)
 )
@@ -79,14 +78,15 @@ CREATE TABLE IF NOT EXISTS consulta (
     fk_funcionario INT NOT NULL,
     fk_animal INT NOT NULL,
     fk_cpf CHAR(11) NOT NULL,
-	fk_tipo_consulta INT NOT NULL,
+	fk_id_consulta INT NOT NULL,
     dt_consulta DATE NOT NULL,
     hr_consulta TIME NOT NULL,
+    status VARCHAR(15) DEFAULT "EM ANDAMENTO",
 		
     FOREIGN KEY (fk_funcionario) REFERENCES funcionarios(id_funcionario),
 	FOREIGN KEY (fk_animal) REFERENCES animal(id_animal),
     FOREIGN KEY (fk_cpf) REFERENCES	cliente(cpf),
-    FOREIGN KEY (fk_tipo_consulta) REFERENCES tipo_consulta(id_tipo)
+    FOREIGN KEY (fk_id_consulta) REFERENCES tipo_consulta(id_consulta)
 )
 default charset = utf8;
 
@@ -107,4 +107,3 @@ CREATE TABLE IF NOT EXISTS historico (
     
 )
 default charset = utf8;
-
