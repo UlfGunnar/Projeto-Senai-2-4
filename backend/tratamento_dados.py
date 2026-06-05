@@ -1,7 +1,7 @@
 from flask import flash
 import re 
 from email_validator import validate_email, EmailNotValidError
-
+import datetime
 #------------------------------------
 #VALIDAÇÃO DA TELA DE REGISTROS
 #------------------------------------
@@ -98,6 +98,64 @@ def validar_cpf(cpf): #tá indo
 #VALIDAÇÃO DA TELA DE MARCAR CONSULTA
 #------------------------------------
 
+def validar_outra_especie_animal(outra_especie_animal): #está funfando
+    outra_especie_animal = outra_especie_animal.strip()
+    outra_especie_animal_padrao = outra_especie_animal_padrao = r"^[A-Za-zÀ-ÿ]+(\s[A-Za-zÀ-ÿ]+)?$"
+    verificando = re.fullmatch(outra_especie_animal_padrao, outra_especie_animal)
+    if verificando:
+        return True
+    else:
+        return False
+
+#data e hora (usar datetime provavelmente)
+    
+def validar_data(data_consulta):
+    try:
+        data = datetime.strptime(data_consulta, "%m/%d/%Y")
+        return data.strftime("%Y-%m-%d")
+    except ValueError:
+        return False
 
 
+def validar_horario(horario):
+    try:
+        hora = datetime.strptime(horario, "%H:%M")
+        return hora.strftime("%H:%M:%S")
+    except ValueError:
+        return False
 
+def complemento_consulta(complemento): #funcionando
+    complemento = complemento.strip()
+    padrao_complemento = r"[A-Za-zÀ-ÿ0-9,.\-/]+(\s[A-Za-zÀ-ÿ0-9,.\-/]+)*"
+    return bool(re.fullmatch(padrao_complemento, complemento))
+ 
+def validar_bairro(bairro): #tá bom
+    bairro = bairro.strip() if bairro else ""
+    # Aceita letras (com acento), números e espaços entre as palavras
+    padrao = r"[A-Za-zÀ-ÿ0-9]+(\s[A-Za-zÀ-ÿ0-9]+)*"
+    return bool(re.fullmatch(padrao, bairro))
+
+def validar_rua(rua): #tá funfando
+    rua = rua.strip() if rua else ""
+    # Aceita letras, números, pontos (ex: R.) e hífens
+    padrao = r"[A-Za-zÀ-ÿ0-9.,\-]+(\s[A-Za-zÀ-ÿ0-9.,\-]+)*"
+    return bool(re.fullmatch(padrao, rua))
+
+def validar_numero(numero_casa): #funfando
+    if not numero_casa.isdecimal():
+        return False
+    if len(numero_casa) > 5:
+        return False
+    else:
+        return True
+
+def validar_proprio_endereco(endereco): #correto
+    # Geralmente é um booleano do checkbox (True/False ou "on"/None)
+    # Se vier como string do form, garante que não tá vazio
+    if endereco:
+        return True
+    return False 
+
+#------------------------------------------------------------
+#FLASH (mensagem de erro)
+#------------------------------------------------------------
