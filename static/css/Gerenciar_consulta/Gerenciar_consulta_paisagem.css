@@ -51,3 +51,7 @@ img#botao_voltar {
 .action-container {
     margin-bottom: 10px;
 }
+
+.btn_notconfirm {
+    width: 200px;
+}

@@ -135,8 +135,7 @@ thead > tr {
     margin-bottom: 5px;
 }
 
-div > button {
-    width: 120px;
+form > button {
     height: 45px;
     background-color: #2A8C4A;
     color: white;
@@ -147,7 +146,7 @@ div > button {
     margin-right: 5px;
 }
 
-div > button:hover {
+form > button:hover {
     background-color: #9BFAB0;
     color: black;
     cursor: pointer;
@@ -161,7 +160,7 @@ div.action-container {
     flex-direction: row;
 }
 
-div > button:active {
+form > button:active {
     background-color: #136930;
 }
 
@@ -205,6 +204,51 @@ label {
 
 .btn_update:hover {
     background-color: rgb(71, 71, 255);
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+.overlay {
+  display: none;              
+  position: fixed;
+  inset: 0;                   
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay.open {
+  display: flex;    
+}
+
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px black solid;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.733);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 400px;
+  position: relative;
+}
+
+.btn_confirm {
+    width: 100px;
+}
+
+.btn_notconfirm {
+    background-color: lightcoral;
+    color: black;
+    height: 45px;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.btn_notconfirm:hover {
+    background-color: red;
     font-weight: bold;
     transition: background-color 0.5s ease;
 }
