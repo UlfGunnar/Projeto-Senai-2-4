@@ -38,7 +38,7 @@ def processar_register():
     rua         = request.form.get('rua_register')
     numero      = request.form.get('numero_register')
     complemento = request.form.get('complemento_register')
-    
+
     return redirect(url_for('register_page'))
 
 #---------------------------------------#
@@ -107,6 +107,18 @@ def processar_menu_funcionario_gerenciar_consulta():
 @app.route('/Gerenciar_consulta')
 def gerenciar_consulta_page():
     return render_template('Gerenciar_consulta.html')
+
+@app.route('/concluir_consulta', methods=['POST'])
+def processar_concluir_consulta():
+    print('botão clicado')
+
+    return redirect(url_for('gerenciar_consulta_page'))
+
+@app.route('/deletar_consulta', methods=['POST'])
+def processar_deletar_consulta():
+    print('botão clicado')
+
+    return redirect(url_for('gerenciar_consulta_page'))
 
 #---------------------------------#
 #---------MARCAR CONSULTA---------#
