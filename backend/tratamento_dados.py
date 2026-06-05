@@ -109,7 +109,7 @@ def validar_outra_especie_animal(outra_especie_animal): #está funfando
 
 #data e hora (usar datetime provavelmente)
     
-def validar_data(data_consulta):
+def validar_data(data_consulta): #tá funfando
     try:
         data = datetime.strptime(data_consulta, "%m/%d/%Y")
         return data.strftime("%Y-%m-%d")
@@ -117,8 +117,8 @@ def validar_data(data_consulta):
         return False
 
 
-def validar_horario(horario):
-    try:
+def validar_horario(horario): #tá funfando
+    try: 
         hora = datetime.strptime(horario, "%H:%M")
         return hora.strftime("%H:%M:%S")
     except ValueError:
