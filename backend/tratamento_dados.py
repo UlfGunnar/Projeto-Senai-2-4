@@ -10,8 +10,8 @@ import datetime
 6 caracteres minimos
 1 caracter especial
 """""
-def validar_senha(self, senha): #Testado
-    self.senha = senha
+def validar_senha(senha): #Testado
+    senha = senha
     senha_sem_espaço = senha.replace(" ", "")
     senha_especial = any(not c.isalnum() for c in senha_sem_espaço)
     if senha_especial and len(senha_sem_espaço) >= 6:
@@ -20,16 +20,16 @@ def validar_senha(self, senha): #Testado
         return False
     
 class validar_nome: #validado, vai devolver o nome sem espaços (corretamente) "igor flores" 
-    def validar_nome(self, nome):
-        self.nome = nome.strip()
-        if self.nome.replace(" ", "").isalpha():
+    def validar_nome(nome):
+        nome = nome.strip()
+        if nome.replace(" ", "").isalpha():
             return True
         else:
             return False
     
-def validar_celular(self, numero, numero_tratado): #tá dale
-    self.numero = numero
-    self.numero_tratado = numero_tratado
+def validar_celular(numero, numero_tratado): #tá dale
+    numero = numero
+    numero_tratado = numero_tratado
     try:
         numero_tratado = re.sub(r"\D", "", numero) #remove tudo que não é número pra ficar certinho pro banco de dados
     except (NameError, TypeError): #garante que tudo existe e o texto é válido (pouco importante né)
