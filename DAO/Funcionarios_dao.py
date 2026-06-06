@@ -12,13 +12,13 @@ class FuncionarioDAO:
             """
 
             valores = (
-                consulta.nome_funcionario,
-                consulta.num_celular,
-                consulta.email,
-                consulta.bairro,
-                consulta.rua,
-                consulta.complemento,
-                consulta.dt_nascimento
+                funcionario.nome_funcionario,
+                funcionario.num_celular,
+                funcionario.email,
+                funcionario.bairro,
+                funcionario.rua,
+                funcionario.complemento,
+                funcionario.dt_nascimento
             )
 
             cursor.execute(sql, valores)
@@ -28,5 +28,5 @@ class FuncionarioDAO:
             print("Erro ao inserir funcionario", e)
 
         finally:
-            cursor.cluse()
+            cursor.close()
             conn.close()
