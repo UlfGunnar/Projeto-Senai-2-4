@@ -55,3 +55,7 @@ img#botao_voltar {
 .btn_notconfirm {
     width: 200px;
 }
+fieldset {
+    padding: 15px;
+    margin-top: 15px;
+}

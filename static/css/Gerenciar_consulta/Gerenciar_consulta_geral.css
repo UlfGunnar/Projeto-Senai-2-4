@@ -252,3 +252,22 @@ label {
     font-weight: bold;
     transition: background-color 0.5s ease;
 }
+
+fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(146deg, #133414, #0fc72e);
+    border: 3px #136930 solid;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.445);
+}
+
+legend {
+    font-weight: bolder;
+    padding: 0px 5px;
+    text-shadow: 1px 1px 1px white;
+}
+
+.data-container {
+    margin: 0px 5px;
+}
