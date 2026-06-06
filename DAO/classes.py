@@ -21,11 +21,11 @@ class Animal():
         
 class funcionario():
     #data_nasc = date
-    def __init__(self, id_funcionario: int, fk_id_cargo: int, nome_funcionario: str, num_cel: str, email: str, bairro: str, rua: str, complemento: str, data_nasc):
+    def __init__(self, id_funcionario: int, fk_id_cargo: int, nome_funcionario: str, num_celular: str, email: str, bairro: str, rua: str, complemento: str, data_nasc):
         self.id_funcionario = id_funcionario
         self.fk_id_cargo = fk_id_cargo
         self.nome_funcionario = nome_funcionario
-        self.num_cel = num_cel
+        self.num_celular = num_celular
         self.email = email
         self.bairro = bairro
         self.rua = rua
