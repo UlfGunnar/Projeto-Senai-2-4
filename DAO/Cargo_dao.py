@@ -1,6 +1,6 @@
 from connection.connection import get_connection
 
-class CArgoDAO:
+class CargoDAO:
     def inserir_cargo(self, cargo):
         try:
             conn = get_connection() 
@@ -8,11 +8,11 @@ class CArgoDAO:
             sql = """
             INSERT INTO cargo (
                 nome_cargo
-            ) VALUES (%s,)
+            ) VALUES (%s)
             """
 
             valores = (
-                cargo.nome_cargo
+                cargo.nome_cargo,
             )
 
             cursor.execute(sql, valores)

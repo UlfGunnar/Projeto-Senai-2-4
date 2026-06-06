@@ -21,7 +21,7 @@ class Animal():
         
 class funcionario():
     #data_nasc = date
-    def __init__(self, id_funcionario: int, fk_id_cargo: int, nome_funcionario: str, num_celular: str, email: str, bairro: str, rua: str, complemento: str, data_nasc):
+    def __init__(self, id_funcionario: int, fk_id_cargo: int, nome_funcionario: str, num_celular: str, email: str, bairro: str, rua: str, complemento: str, dt_nascimento):
         self.id_funcionario = id_funcionario
         self.fk_id_cargo = fk_id_cargo
         self.nome_funcionario = nome_funcionario
@@ -30,8 +30,8 @@ class funcionario():
         self.bairro = bairro
         self.rua = rua
         self.complemento = complemento
-        self.data_nasc = data_nasc
-        
+        self.dt_nascimento = dt_nascimento
+
 class cargo():
     def __init__(self, id_cargo: int, nome_cargo: str):
         self.id_cargo = id_cargo
