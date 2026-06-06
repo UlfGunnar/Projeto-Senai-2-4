@@ -21,8 +21,9 @@ class Animal():
         
 class funcionario():
     #data_nasc = date
-    def __init__(self, id_funcionario: int, nome_func: str, num_cel: str, email: str, bairro: str, rua: str, complemento: str, data_nasc):
+    def __init__(self, id_funcionario: int, fk_id_cargo: int, nome_func: str, num_cel: str, email: str, bairro: str, rua: str, complemento: str, data_nasc):
         self.id_funcionario = id_funcionario
+        self.fk_id_cargo = fk_id_cargo
         self.nome_func = nome_func
         self.num_cel = num_cel
         self.email = email
@@ -49,8 +50,7 @@ class Consulta():
         self.hr_consulta = hr_consulta
 
 class Tipo_de_consulta():
-    def __init__(self, id_tipo: int, id_consulta: int, finalidade: str, valor: float):
-        self.id_tipo = id_tipo
+    def __init__(self, id_consulta: int, finalidade: str, valor: float):
         self.id_consulta = id_consulta
         self.finalidade = finalidade
         self.valor = valor
@@ -59,9 +59,9 @@ class Login():
     def __init__(self, id_login: int, fk_funcionario: int, fk_cpf: str, fk_cargo: int, senha: str):
         self.id_login = id_login
         self.fk_funcionario = fk_funcionario
-        self.senha = senha
         self.fk_cpf = fk_cpf
         self.fk_cargo = fk_cargo
+        self.senha = senha
         
 
 class Historico():
