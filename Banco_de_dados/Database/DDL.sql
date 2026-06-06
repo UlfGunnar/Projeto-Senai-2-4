@@ -34,14 +34,16 @@ default charset = utf8;
 CREATE TABLE IF NOT EXISTS funcionarios (
     
     id_funcionario INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    fk_id_cargo INT,
     nome_funcionario VARCHAR(60) NOT NULL,
     num_celular CHAR(11) NOT NULL,
     email VARCHAR(80) NOT NULL,
     bairro VARCHAR(20) NOT NULL,
     rua CHAR(50) NOT NULL,
     complemento VARCHAR(50),
-    dt_nascimento DATE NOT NULL
+    dt_nascimento DATE NOT NULL,
 
+    FOREIGN KEY (fk_id_cargo) REFERENCES cargo(id_cargo)
 )
 default charset = utf8;
 
