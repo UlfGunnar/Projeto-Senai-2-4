@@ -1,7 +1,7 @@
 from flask import flash
 import re 
 from email_validator import validate_email, EmailNotValidError
-import datetime
+from datetime import datetime
 #------------------------------------
 #VALIDAÇÃO DA TELA DE REGISTROS
 #------------------------------------
