@@ -78,7 +78,7 @@ def validar_rua(rua): #tá funcionando
     else:
         return False
     
-def complemento(complemento): #tá dale (2)
+def validar_complemento(complemento): #tá dale (2)
     #sem caractere especial 
     #sem espaço no começo e no fim
     complemento = complemento.strip()
