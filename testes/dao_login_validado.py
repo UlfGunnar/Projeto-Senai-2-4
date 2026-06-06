@@ -11,10 +11,10 @@ dao = LoginDAO()
 
 login = Login(
     None,
+    2,
+    "12625627891",
     1,
-    "joao@",
-    "12625627791",
-    1
+    "joao@"
 )
 
 dao.inserir_login(login)
