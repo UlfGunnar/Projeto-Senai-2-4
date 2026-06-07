@@ -2,6 +2,7 @@ from flask import flash
 import re 
 from email_validator import validate_email, EmailNotValidError
 from datetime import datetime
+
 #------------------------------------
 #VALIDAÇÃO DA TELA DE REGISTROS
 #------------------------------------
@@ -19,19 +20,18 @@ def validar_senha(senha): #Testado
     else:
         return False
     
-class validar_nome: #validado, vai devolver o nome sem espaços (corretamente) "igor flores" 
-    def validar_nome(nome):
+    #validado, vai devolver o nome sem espaços (corretamente) "igor flores" 
+def validar_nome(nome):
         nome = nome.strip()
         if nome.replace(" ", "").isalpha():
             return True
         else:
             return False
     
-def validar_celular(numero, numero_tratado): #tá dale
-    numero = numero
-    numero_tratado = numero_tratado
+def validar_celular(celular): #tá dale
+    numero_tratado = celular.strip()
     try:
-        numero_tratado = re.sub(r"\D", "", numero) #remove tudo que não é número pra ficar certinho pro banco de dados
+        numero_tratado = re.sub(r"\D", "", celular) #remove tudo que não é número pra ficar certinho pro banco de dados
     except (NameError, TypeError): #garante que tudo existe e o texto é válido (pouco importante né)
         return False
     if len(numero_tratado) == 11: #claramente limita a 11 dígitos
@@ -109,13 +109,13 @@ def validar_outra_especie_animal(outra_especie_animal): #está funfando
 
 #data e hora (usar datetime provavelmente)
     
-def validar_data(data_consulta): #tá funfando
+def validar_data(data_consulta):
     try:
-        data = datetime.strptime(data_consulta, "%m/%d/%Y")
+        # Mudamos de %m/%d para %d/%m
+        data = datetime.strptime(data_consulta, "%d/%m/%Y")
         return data.strftime("%Y-%m-%d")
     except ValueError:
         return False
-
 
 def validar_horario(horario): #tá funfando
     try: 
