@@ -61,12 +61,18 @@ def validar_bairro(bairro): #tá correto
 def validar_numero(numero_casa): #tá rolando
     #maior número pode ter 5 dígitos
     #só pode número
+    numero_casa = numero_casa or ""
+
+    if not numero_casa:
+        return True
+
     if not numero_casa.isdecimal():
         return False
+
     if len(numero_casa) > 5:
         return False
-    else:
-        return True
+
+    return True
     
 def validar_rua(rua): #tá funcionando
     #não tem muito o que validar, tem rua com caracter especial e coisa do tipo então meh
@@ -141,13 +147,17 @@ def validar_rua(rua): #tá funfando
     padrao = r"[A-Za-zÀ-ÿ0-9.,\-]+(\s[A-Za-zÀ-ÿ0-9.,\-]+)*"
     return bool(re.fullmatch(padrao, rua))
 
-def validar_numero(numero_casa): #funfando
+def validar_numero(numero_casa):
+    if not numero_casa:
+        return True
+
     if not numero_casa.isdecimal():
         return False
+
     if len(numero_casa) > 5:
         return False
-    else:
-        return True
+
+    return True
 
 def validar_proprio_endereco(endereco): #correto
     # Geralmente é um booleano do checkbox (True/False ou "on"/None)
