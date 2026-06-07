@@ -95,6 +95,7 @@ def validar_cpf(cpf): #tá indo
     #11 dígitos
     #só número
     cpf = cpf.strip()# tira espaço do lado
+    cpf = cpf.replace(".", "").replace("-", "")
     if cpf.isdecimal() and len(cpf) == 11: #só garante que vai seguir o padrão que a gente quer
         return True
     else:
