@@ -194,6 +194,9 @@ label {
 
 .btn_update {
     background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn_delete:hover {
@@ -270,4 +273,14 @@ legend {
 
 .data-container {
     margin: 0px 5px;
+}
+
+img#lixo {
+    width: 20px;
+    height: 20px;
+}
+
+img#lapis {
+    width: 30px;
+    height: 30px;
 }
