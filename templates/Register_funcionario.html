@@ -23,7 +23,7 @@
                     <fieldset>
                         <legend>Dados Pessoais</legend>
                         <input type="text" name="nome_register" id="nome" placeholder="Nome completo" required>
-                        <input type="text" name="cpf_register" id="cpf" placeholder="CPF" required>
+                        <input type="text" name="cpf_register" id="cpf" placeholder="CPF" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2} required>
                         <input type="password" name="senha_register" id="senha" placeholder="••••••••" required>
                         <select name="cargo_register" id="">
                             <option value="" disabled selected>Selecione o cargo...</option>
@@ -60,5 +60,6 @@
         </section>
     </main>
     <script src="{{ url_for('static', filename='JavaScript/exibir_senha.js') }}"></script>
+    <script src="{{ url_for('static', filename='JavaScript/format.js') }}"></script>
 </body>
 </html>
