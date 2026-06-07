@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for
 from DAO.classes import Cliente, funcionario, Animal, cargo, Consulta, Tipo_de_consulta, Login, Historico
 import backend.tratamento_dados as tratar_dados
 from datetime import datetime
+from DAO.Cliente_dao import ClienteDAO
+from DAO.Funcionarios_dao import FuncionarioDAO
+from DAO.Animal_dao import AnimalDAO
+from DAO.Consulta_dao import ConsultaDAO
 app = Flask(__name__)
 
 #-----------------------#
@@ -65,6 +69,10 @@ def processar_register():
             numero=numero,
             complemento=complemento
         )
+
+
+        dao = ClienteDAO()
+        dao.salvar_dados(novo_cliente)
 
         return redirect(url_for('login_page'))
 
@@ -132,6 +140,9 @@ def processar_register_func():
             complemento,
             data_nasc_valida
         )
+
+        dao = FuncionarioDAO()
+        dao.salvar_dados(novo_funcionario)
         
         return redirect(url_for('login_page'))
     else:
@@ -259,6 +270,10 @@ def processar_marcar_consulta():
             peso        = 0.0             
         )
 
+        dao = AnimalDAO()
+        dao.salvar_dados(novo_animal)
+
+
         nova_consulta = Consulta(
             id_consulta         = None,
             fk_animal           = None,  
@@ -268,6 +283,9 @@ def processar_marcar_consulta():
             dt_consulta         = data_valida,
             hr_consulta         = hora_valida
         )
+
+        dao = ClienteDAO()
+        dao.salvar_dados(nova_consulta)
         
         return redirect(url_for('menu_cliente_page'))
     
