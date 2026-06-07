@@ -29,42 +29,46 @@ def register_page():
 
 @app.route('/register', methods=['POST']) #testando
 def processar_register():
-    nome        = request.form.get('nome_register')
+    nome        = request.form.get('nome_register') 
     cpf         = request.form.get('cpf_register')
     senha       = request.form.get('senha_register')
 
     celular     = request.form.get('celular_register')
     email       = request.form.get('email_register')
 
-    bairro      = request.form.get('bairro_register')
-    rua         = request.form.get('rua_register')
-    numero      = request.form.get('numero_register')
-    complemento = request.form.get('complemento_register')
+    bairro      = request.form.get('bairro_register') or None
+    rua         = request.form.get('rua_register') or None
+    numero      = request.form.get('numero_register') or None
+    complemento = request.form.get('complemento_register') or None
 
     cpf_valido = tratar_dados.validar_cpf(cpf)
     senha_valida = tratar_dados.validar_senha(senha)
     nome_valido = tratar_dados.validar_nome(nome)
     celular_valido = tratar_dados.validar_celular(celular)
     email_valido = tratar_dados.validar_email(email)
-    bairro_valido = tratar_dados.validar_bairro(bairro)
-    rua_valida = tratar_dados.validar_rua(rua)
-    numero_valido = tratar_dados.validar_numero(numero)
-    complemento_valido = tratar_dados.validar_complemento(complemento)
-    
-    if cpf_valido and senha_valida and nome_valido and celular_valido and email_valido and bairro_valido and rua_valida and numero_valido and complemento_valido:
+
+    bairro = bairro or None
+    rua = rua or None
+    numero = numero or None
+    complemento = complemento or None
+
+    if (
+        cpf_valido and senha_valida and nome_valido and celular_valido and email_valido
+    ):
         novo_cliente = Cliente(
-            cpf = cpf,
-            nome_cliente = nome,
-            celular = celular,
-            email = email,
-            bairro = bairro,
-            rua = rua,
-            complemento = complemento,
-            numero = numero
+            cpf=cpf,
+            nome_cliente=nome,
+            celular=celular,
+            email=email,
+            bairro=bairro,
+            rua=rua,
+            numero=numero,
+            complemento=complemento
         )
+
         return redirect(url_for('login_page'))
-    else:
-        return redirect(url_for('register_page'))
+
+    return redirect(url_for('register_page'))
 
     
 #---------------------------------------#
