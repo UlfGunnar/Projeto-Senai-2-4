@@ -6,6 +6,7 @@ from DAO.Cliente_dao import ClienteDAO
 from DAO.Funcionarios_dao import FuncionarioDAO
 from DAO.Animal_dao import AnimalDAO
 from DAO.Consulta_dao import ConsultaDAO
+from re import re
 
 app = Flask(__name__)
 app.secret_key = 'chave_secreta'
@@ -46,6 +47,9 @@ def processar_register():
     rua         = request.form.get('rua_register') or None
     numero      = request.form.get('numero_register') or None
     complemento = request.form.get('complemento_register') or None
+    
+    cpf = cpf.strip().replace(".", "").replace("-", "")
+    celular = re.sub(r"\D", "", celular)
 
 
     if not nome or not cpf or not senha or not celular or not email:
