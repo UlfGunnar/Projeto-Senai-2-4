@@ -45,9 +45,6 @@ def processar_register():
     numero      = request.form.get('numero_register') or None
     complemento = request.form.get('complemento_register') or None
 
-    if not nome or not cpf or not senha or not celular or not email:
-        return redirect(url_for('register_page'))
-
     cpf_valido     = tratar_dados.validar_cpf(cpf)
     senha_valida   = tratar_dados.validar_senha(senha)
     nome_valido    = tratar_dados.validar_nome(nome)
@@ -87,7 +84,6 @@ def register_func_page():
 
 @app.route('/register_func', methods=['POST'])
 def processar_register_func():
-    # 1. Captura de dados com os names exatos do seu HTML
     nome        = request.form.get('nome_register')
     cpf         = request.form.get('cpf_register')
     senha       = request.form.get('senha_register')
