@@ -53,7 +53,14 @@ def processar_register():
     nome_valido    = tratar_dados.validar_nome(nome)
     celular_valido = tratar_dados.validar_celular(celular)
     email_valido   = tratar_dados.validar_email(email)
-
+    
+    novo_login = Login(
+            id_login=None,            
+            fk_funcionario=None,       
+            senha=senha,               
+            fk_cpf=cpf,                
+            fk_cargo=None
+    )
     if cpf_valido and senha_valida and nome_valido and celular_valido and email_valido:
         novo_cliente = Cliente(
             cpf=cpf,
