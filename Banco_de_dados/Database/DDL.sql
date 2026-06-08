@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS login (
 
     id_login INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     fk_funcionario INT ,
-    senha VARCHAR(6) NOT NULL,
+    senha VARCHAR(20) NOT NULL,
     fk_cpf CHAR(11) ,
     fk_cargo INT,
 

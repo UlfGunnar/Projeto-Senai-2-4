@@ -128,3 +128,14 @@ main > section#register > a {
 main > section#register > a:hover {
     text-decoration: underline;
 }
+
+p#accepted {
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.699);
+    color: #64c27b;
+    background: linear-gradient(330deg, #9BFAB0, whitesmoke);
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+}
