@@ -14,6 +14,19 @@
         <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo">
         <h1>Tela de registro</h1>
     </header>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="alert alert-{{ category }}" id="error">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     <main>
         <h2>Cadastrar Conta</h2>
 
@@ -22,14 +35,14 @@
                 <div>
                     <fieldset>
                         <legend>Dados Pessoais</legend>
-                        <input type="text" name="nome_register" id="nome" placeholder="Nome completo" required>
-                        <input type="text" name="cpf_register" id="cpf" placeholder="CPF" required>
-                        <input type="password" name="senha_register" id="senha" placeholder="••••••••" required>
+                        <input type="text" name="nome_register" id="nome" placeholder="Nome completo*" required>
+                        <input type="text" name="cpf_register" id="cpf" placeholder="CPF*" required>
+                        <input type="password" name="senha_register" id="senha" placeholder="••••••••*" required>
                     </fieldset>
                     <fieldset>
                         <legend>Contato</legend>
-                        <input type="tel" name="celular_register" id="celular" placeholder="(00) 00000-0000" required>
-                        <input type="email" name="email_register" id="email" placeholder="email@exemplo.com" required>
+                        <input type="tel" name="celular_register" id="celular" placeholder="(00) 00000-0000*" required>
+                        <input type="email" name="email_register" id="email" placeholder="email@exemplo.com*" required>
                     </fieldset>
                     <fieldset>
                         <legend>Endereço</legend>
