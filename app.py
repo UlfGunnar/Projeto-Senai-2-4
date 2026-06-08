@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from DAO.classes import Cliente, funcionario, Animal, cargo, Consulta, Tipo_de_consulta, Login, Historico
 import backend.tratamento_dados as tratar_dados
 import re
@@ -7,7 +7,10 @@ from DAO.Cliente_dao import ClienteDAO
 from DAO.Funcionarios_dao import FuncionarioDAO
 from DAO.Animal_dao import AnimalDAO
 from DAO.Consulta_dao import ConsultaDAO
+from re import re
+
 app = Flask(__name__)
+app.secret_key = 'chave_secreta'
 
 #-----------------------#
 #---------LOGIN---------#
@@ -48,6 +51,13 @@ def processar_register():
     
     cpf = cpf.strip().replace(".", "").replace("-", "")
     celular = re.sub(r"\D", "", celular)
+<<<<<<< HEAD
+=======
+
+
+    if not nome or not cpf or not senha or not celular or not email:
+        return redirect(url_for('register_page'))
+>>>>>>> abdeb3e2e43a663dd179607dd5e6c30fa7483736
 
     cpf_valido     = tratar_dados.validar_cpf(cpf)
     senha_valida   = tratar_dados.validar_senha(senha)
@@ -55,6 +65,17 @@ def processar_register():
     celular_valido = tratar_dados.validar_celular(celular)
     email_valido   = tratar_dados.validar_email(email)
     
+    if nome_valido == False:
+        flash("Nome inválido", "error")
+    if cpf_valido == False:
+        flash("CPF inválido", "error")
+    if senha_valida == False:
+        flash("Senha inválida, mínimo de 6 digitos e pelo menos 1 caracter especial", "error")
+    if celular_valido == False:
+        flash("celular inválido", "error")
+    if email_valido == False:
+        flash("email inválido", "error")
+
     novo_login = Login(
             id_login=None,            
             fk_funcionario=None,       
@@ -74,10 +95,15 @@ def processar_register():
             complemento=complemento
         )
 
+<<<<<<< HEAD
         dao = ClienteDAO()
         dao.inserir_cliente(novo_cliente)
 
+=======
+        flash('Cadastro Realizado!', 'sucess')
+>>>>>>> abdeb3e2e43a663dd179607dd5e6c30fa7483736
         return redirect(url_for('login_page'))
+
 
     return redirect(url_for('register_page'))
 
@@ -92,6 +118,7 @@ def register_func_page():
 
 @app.route('/register_func', methods=['POST'])
 def processar_register_func():
+    # 1. Captura de dados com os names exatos do seu HTML
     nome        = request.form.get('nome_register')
     cpf         = request.form.get('cpf_register')
     senha       = request.form.get('senha_register')
@@ -126,6 +153,20 @@ def processar_register_func():
     rua_valida = tratar_dados.validar_rua(rua)
     
     complemento_valido = tratar_dados.validar_complemento(complemento) if complemento else True
+
+    if nome_valido == False:
+        flash("Nome inválido", "error")
+    if cpf_valido == False:
+        flash("CPF inválido", "error")
+    if senha_valida == False:
+        flash("Senha inválida, mínimo de 6 digitos e pelo menos 1 caracter especial", "error")
+    if data_nasc_valida == False:
+        flash("Data inválido", "error")
+    if celular_valido == False:
+        flash("celular inválido", "error")
+    if email_valido == False:
+        flash("email inválido", "error")
+    
     
     if (nome_valido and cpf_valido and senha_valida and data_nasc_valida and 
         cargo_valido and celular_valido and email_valido and 
@@ -143,11 +184,16 @@ def processar_register_func():
             data_nasc_valida
         )
 
+        """
         dao = FuncionarioDAO()
         dao.salvar_dados(novo_funcionario)
+        """
         
+        flash('Cadastro Realizado!', 'sucess')
         return redirect(url_for('login_page'))
     else:
+
+
         return redirect(url_for('register_func_page'))
 #------------------------------#
 #---------MENU CLIENTE---------#

@@ -3,6 +3,8 @@ import re
 from email_validator import validate_email, EmailNotValidError
 from datetime import datetime
 
+# VALIDAR DATA DE NASCIMENTO DO FUNCIONÁRIO PARA VERIFICAR SE É MAIOR DE IDADE
+
 #------------------------------------
 #VALIDAÇÃO DA TELA DE REGISTROS
 #------------------------------------
@@ -116,7 +118,7 @@ def validar_outra_especie_animal(outra_especie_animal): #está funfando
 
 #data e hora (usar datetime provavelmente)
     
-def validar_data(data_consulta):
+def validar_data(data_consulta): 
     try:
         # Mudamos de %m/%d para %d/%m
         data = datetime.strptime(data_consulta, "%d/%m/%Y")
