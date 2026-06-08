@@ -45,20 +45,23 @@ def processar_register():
     numero      = request.form.get('numero_register') or None
     complemento = request.form.get('complemento_register') or None
 
-    cpf_valido = tratar_dados.validar_cpf(cpf)
-    senha_valida = tratar_dados.validar_senha(senha)
-    nome_valido = tratar_dados.validar_nome(nome)
+    if not nome or not cpf or not senha or not celular or not email:
+        return redirect(url_for('register_page'))
+
+    cpf_valido     = tratar_dados.validar_cpf(cpf)
+    senha_valida   = tratar_dados.validar_senha(senha)
+    nome_valido    = tratar_dados.validar_nome(nome)
     celular_valido = tratar_dados.validar_celular(celular)
-    email_valido = tratar_dados.validar_email(email)
-
-    bairro = bairro or None
-    rua = rua or None
-    numero = numero or None
-    complemento = complemento or None
-
-    if (
-        cpf_valido and senha_valida and nome_valido and celular_valido and email_valido
-    ):
+    email_valido   = tratar_dados.validar_email(email)
+    
+    novo_login = Login(
+            id_login=None,            
+            fk_funcionario=None,       
+            senha=senha,               
+            fk_cpf=cpf,                
+            fk_cargo=None
+    )
+    if cpf_valido and senha_valida and nome_valido and celular_valido and email_valido:
         novo_cliente = Cliente(
             cpf=cpf,
             nome_cliente=nome,
@@ -69,11 +72,6 @@ def processar_register():
             numero=numero,
             complemento=complemento
         )
-
-
-        dao = ClienteDAO()
-        dao.salvar_dados(novo_cliente)
-
         return redirect(url_for('login_page'))
 
     return redirect(url_for('register_page'))
