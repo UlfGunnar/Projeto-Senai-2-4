@@ -136,3 +136,18 @@ label:hover {
     cursor: pointer;
 }
 
+div.container {
+    display: flex;
+}
+
+p#error {
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.699);
+    color: #000000;
+    background: linear-gradient(330deg, red, whitesmoke);
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    margin: 75px 0px 1px 0px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+    font-size: 14px;
+}
