@@ -118,7 +118,6 @@ def validar_outra_especie_animal(outra_especie_animal): #está funfando
     
 def validar_data(data_consulta):
     try:
-        # Mudamos de %m/%d para %d/%m
         data = datetime.strptime(data_consulta, "%d/%m/%Y")
         return data.strftime("%Y-%m-%d")
     except ValueError:
