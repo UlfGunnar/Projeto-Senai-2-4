@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from DAO.classes import Cliente, funcionario, Animal, cargo, Consulta, Tipo_de_consulta, Login, Historico
 import backend.tratamento_dados as tratar_dados
+import re
 from datetime import datetime
 from DAO.Cliente_dao import ClienteDAO
 from DAO.Funcionarios_dao import FuncionarioDAO
@@ -44,6 +45,9 @@ def processar_register():
     rua         = request.form.get('rua_register') or None
     numero      = request.form.get('numero_register') or None
     complemento = request.form.get('complemento_register') or None
+    
+    cpf = cpf.strip().replace(".", "").replace("-", "")
+    celular = re.sub(r"\D", "", celular)
 
     cpf_valido     = tratar_dados.validar_cpf(cpf)
     senha_valida   = tratar_dados.validar_senha(senha)
@@ -69,6 +73,10 @@ def processar_register():
             numero=numero,
             complemento=complemento
         )
+
+        dao = ClienteDAO()
+        dao.inserir_cliente(novo_cliente)
+
         return redirect(url_for('login_page'))
 
     return redirect(url_for('register_page'))
