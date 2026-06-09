@@ -6,6 +6,8 @@ from DAO.Cliente_dao import ClienteDAO
 from DAO.Funcionarios_dao import FuncionarioDAO
 from DAO.Animal_dao import AnimalDAO
 from DAO.Consulta_dao import ConsultaDAO
+
+
 app = Flask(__name__)
 
 #-----------------------#
@@ -44,6 +46,13 @@ def processar_register():
     rua         = request.form.get('rua_register') or None
     numero      = request.form.get('numero_register') or None
     complemento = request.form.get('complemento_register') or None
+    
+    cpf = cpf.strip().replace(".", "").replace("-", "")
+    celular = re.sub(r"\D", "", celular)
+
+
+    if not nome or not cpf or not senha or not celular or not email:
+        return redirect(url_for('register_page'))
 
     cpf_valido     = tratar_dados.validar_cpf(cpf)
     senha_valida   = tratar_dados.validar_senha(senha)
@@ -73,6 +82,7 @@ def processar_register():
         dao = ClienteDAO()
         dao.inserir_cliente(novo_cliente)
 
+        flash('Cadastro Realizado!', 'sucess')
         return redirect(url_for('login_page'))
 
     return redirect(url_for('register_page'))
