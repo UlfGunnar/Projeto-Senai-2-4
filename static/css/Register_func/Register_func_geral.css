@@ -51,7 +51,6 @@ main {
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.678);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.466);
-    margin-top: 30px;
 }
 
 main > h2 {
@@ -143,4 +142,20 @@ label.input_nascimento {
 }
 input#data_nasc {
     width: 234px;
+}
+
+div.container {
+    display: flex;
+}
+
+p#error {
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.699);
+    color: #000000;
+    background: linear-gradient(330deg, red, whitesmoke);
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    margin: 130px 0px 1px 0px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+    font-size: 14px;
 }

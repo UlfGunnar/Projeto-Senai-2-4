@@ -163,3 +163,19 @@ button#btn_voltar {
     border: none;
     box-shadow: none;
 }
+
+div.container {
+    display: flex;
+}
+
+p#error {
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.699);
+    color: #000000;
+    background: linear-gradient(330deg, red, whitesmoke);
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    margin: 120px 0px 1px 0px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+    font-size: 14px;
+}
