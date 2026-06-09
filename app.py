@@ -7,8 +7,7 @@ from DAO.Cliente_dao import ClienteDAO
 from DAO.Funcionarios_dao import FuncionarioDAO
 from DAO.Animal_dao import AnimalDAO
 from DAO.Consulta_dao import ConsultaDAO
-import re
-from re import re
+
 
 app = Flask(__name__)
 app.secret_key = 'chave_secreta'
