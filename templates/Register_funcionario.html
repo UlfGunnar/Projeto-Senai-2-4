@@ -14,6 +14,19 @@
         <img src="{{ url_for('static', filename='Images/Logo.png') }}" alt="Logo">
         <h1>Registro de funcionário</h1>
     </header>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="alert alert-{{ category }}" id="error">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     <main>
         <h2>Cadastrar Conta</h2>
 

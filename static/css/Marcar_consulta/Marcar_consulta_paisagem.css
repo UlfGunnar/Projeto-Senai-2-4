@@ -6,6 +6,7 @@ body {
     background-image: url('../../Images/Tela_marcar_consulta_paisagem.png');
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 main {

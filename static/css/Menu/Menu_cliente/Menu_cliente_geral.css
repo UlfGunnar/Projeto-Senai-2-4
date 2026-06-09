@@ -102,3 +102,14 @@ img#sair:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
     transition: box-shadow 0.5s ease;
 }
+
+p#accepted {
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.699);
+    color: #64c27b;
+    background: linear-gradient(330deg, #9BFAB0, whitesmoke);
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+}

@@ -2,7 +2,7 @@ SELECT
 	tb1.nome_animal,
     tb1.especie,
     tb2.dt_consulta,
-    tb2.hr_consulta,
+    tb2.hr_consulta, 
     tb2.status,
     tb3.finalidade
 FROM db_dogtor.animal tb1
