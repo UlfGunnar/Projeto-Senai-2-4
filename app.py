@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from DAO.classes import Cliente, funcionario, Animal, cargo, Consulta, Tipo_de_consulta, Login, Historico
 import backend.tratamento_dados as tratar_dados
 from datetime import datetime
@@ -6,6 +6,7 @@ from DAO.Cliente_dao import ClienteDAO
 from DAO.Funcionarios_dao import FuncionarioDAO
 from DAO.Animal_dao import AnimalDAO
 from DAO.Consulta_dao import ConsultaDAO
+import re
 
 
 app = Flask(__name__)
@@ -49,10 +50,6 @@ def processar_register():
     
     cpf = cpf.strip().replace(".", "").replace("-", "")
     celular = re.sub(r"\D", "", celular)
-
-
-    if not nome or not cpf or not senha or not celular or not email:
-        return redirect(url_for('register_page'))
 
     cpf_valido     = tratar_dados.validar_cpf(cpf)
     senha_valida   = tratar_dados.validar_senha(senha)
@@ -115,6 +112,8 @@ def processar_register_func():
     cpf_valido = tratar_dados.validar_cpf(cpf)
     senha_valida = tratar_dados.validar_senha(senha)
     
+    celular = re.sub(r"\D", "", celular)
+
     try:
         data_br = datetime.strptime(data_nasc, "%Y-%m-%d").strftime("%d/%m/%Y")
         data_nasc_valida = tratar_dados.validar_data(data_br)
@@ -132,6 +131,24 @@ def processar_register_func():
     rua_valida = tratar_dados.validar_rua(rua)
     
     complemento_valido = tratar_dados.validar_complemento(complemento) if complemento else True
+
+    if nome_valido == False:
+        flash("Nome inválido", "error")
+    if cpf_valido == False:
+        flash("CPF inválido", "error")
+    if senha_valida == False:
+        flash("Senha inválida, mínimo de 6 digitos e pelo menos 1 caracter especial", "error")
+    if celular_valido == False:
+        flash("celular inválido", "error")
+    if email_valido == False:
+        flash("email inválido", "error")
+    if bairro_valido == False:
+        flash("Bairro inválido", "error")
+    if rua_valida == False:
+        flash("Rua inválido", "error")
+    if cargo_valido == False:
+        flash("Selecione um cargo")
+    
     
     if (nome_valido and cpf_valido and senha_valida and data_nasc_valida and 
         cargo_valido and celular_valido and email_valido and 
@@ -237,7 +254,7 @@ def processar_marcar_consulta():
     proprio_end     = request.form.get('endereco')
 
     tipo_valido = bool(tipo_consulta)
-    nome_valido = tratar_dados.validar_nome.validar_nome(nome_animal)
+    nome_valido = tratar_dados.validar_nome(nome_animal)
     data_valida = tratar_dados.validar_data(data_consulta)
     hora_valida = tratar_dados.validar_horario(hora_consulta)
 
@@ -263,7 +280,7 @@ def processar_marcar_consulta():
         else:
             complemento_valido = True
             
-    if (tipo_valido and especie_valida and nome_valido and data_valida and 
+    if (tipo_valido and especie_valida and nome_valido and data_valida and  
         hora_valida and bairro_valido and rua_valida and numero_valido and complemento_valido):
         
         cpf_cliente = "12345678901" #Provisório
@@ -295,8 +312,36 @@ def processar_marcar_consulta():
         dao = ClienteDAO()
         dao.salvar_dados(nova_consulta)
         
+        flash('Consulta marcarda!', 'sucess')
         return redirect(url_for('menu_cliente_page'))
     
+    if tipo_valido == False:
+        flash('Tipo da consulta inválido', 'error')
+
+    if nome_valido == False:
+        flash('Nome inválido', 'error')
+
+    if data_valida == False:
+        flash('Data inválido', 'error')
+
+    if hora_valida == False:
+        flash('Hora inválido', 'error')
+
+    if especie_valida == False:
+        flash('Espécie inválido', 'error')
+
+    if bairro_valido == False:
+        flash('Bairro inválido', 'error')
+
+    if rua_valida == False:
+        flash('Rua inválido', 'error')
+
+    if numero_valido == False:
+        flash('N° Residencial inválido', 'error')
+
+    if complemento_valido == False:
+        flash('Complemento inválido', 'error')
+
     return redirect(url_for('marcar_consulta_page'))
 
 #-------------------------------------#
