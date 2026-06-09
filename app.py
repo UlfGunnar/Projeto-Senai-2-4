@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from DAO.classes import Cliente, funcionario, Animal, cargo, Consulta, Tipo_de_consulta, Login, Historico
 import backend.tratamento_dados as tratar_dados
 from datetime import datetime
