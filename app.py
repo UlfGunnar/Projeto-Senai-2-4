@@ -93,7 +93,7 @@ def processar_register():
 def register_func_page():
     return render_template('Register_funcionario.html')
 
-@app.route('/register_func', methods=['POST'])
+@app.route('/register_func', methods=['POST']) #cpf removido 
 def processar_register_func():
     nome        = request.form.get('nome_register')
     cpf         = request.form.get('cpf_register')
@@ -104,12 +104,11 @@ def processar_register_func():
     celular     = request.form.get('celular_register')
     email       = request.form.get('email_register')
 
-    bairro      = request.form.get('bairro_register')
-    rua         = request.form.get('rua_register')
-    complemento = request.form.get('complemento_register')
+    bairro      = request.form.get('bairro_register')or None
+    rua         = request.form.get('rua_register')or None
+    complemento = request.form.get('complemento_register') or None
 
     nome_valido = tratar_dados.validar_nome(nome)
-    cpf_valido = tratar_dados.validar_cpf(cpf)
     senha_valida = tratar_dados.validar_senha(senha)
     
     celular = re.sub(r"\D", "", celular)
@@ -127,15 +126,23 @@ def processar_register_func():
     email_valido = retorno_email[0] if isinstance(retorno_email, tuple) else False
     email_limpo = retorno_email[1] if isinstance(retorno_email, tuple) else email
     
-    bairro_valido = tratar_dados.validar_bairro(bairro)
-    rua_valida = tratar_dados.validar_rua(rua)
-    
-    complemento_valido = tratar_dados.validar_complemento(complemento) if complemento else True
+    bairro_valido = (
+    tratar_dados.validar_bairro(bairro)
+    if bairro else True
+)
+
+    rua_valida = (
+        tratar_dados.validar_rua(rua)
+        if rua else True
+    )
+
+    complemento_valido = (
+        tratar_dados.validar_complemento(complemento)
+        if complemento else True
+    )
 
     if nome_valido == False:
         flash("Nome inválido", "error")
-    if cpf_valido == False:
-        flash("CPF inválido", "error")
     if senha_valida == False:
         flash("Senha inválida, mínimo de 6 digitos e pelo menos 1 caracter especial", "error")
     if celular_valido == False:
@@ -149,8 +156,7 @@ def processar_register_func():
     if cargo_valido == False:
         flash("Selecione um cargo")
     
-    
-    if (nome_valido and cpf_valido and senha_valida and data_nasc_valida and 
+    if (nome_valido and senha_valida and data_nasc_valida and 
         cargo_valido and celular_valido and email_valido and 
         bairro_valido and rua_valida and complemento_valido):
         
@@ -165,7 +171,7 @@ def processar_register_func():
             complemento,
             data_nasc_valida
         )
-
+        
         dao = FuncionarioDAO()
         dao.inserir_funcionario(novo_funcionario)
         
