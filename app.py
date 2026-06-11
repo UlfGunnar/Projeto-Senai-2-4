@@ -47,22 +47,22 @@ def processar_login():
     dao = LoginDAO()
     verificacao_login = dao.validar_login(teste_login)
 
-    print(verificacao_login)
-    print(verificacao_login[0][1])
+    try:
+        if verificacao_login != []:
+            status_usuario = True
 
-    if verificacao_login:
-        status_usuario = True
+            if verificacao_login[0][0]:
+                classificacao = 'cliente'
+                chave_usuario = verificacao_login[0][0]
 
-        if verificacao_login[0][0]:
-            classificacao = 'cliente'
-            chave_usuario = verificacao_login[0][0]
+                return redirect(url_for('menu_cliente_page'))
+            else:
+                classificacao = 'funcionario'
+                chave_usuario = verificacao_login[0][1]
+                print(chave_usuario)
 
-            return redirect(url_for('menu_cliente_page'))
-        else:
-            chave_usuario = verificacao_login[0][1]
-
-            return redirect(url_for('menu_funcionario_page'))
-    else: 
+                return redirect(url_for('menu_funcionario_page'))
+    except: 
         return redirect(url_for('login_page'))   
 
 #---------------------------#
@@ -301,12 +301,20 @@ def gerenciar_consulta_page():
 
 @app.route('/concluir_consulta', methods=['POST'])
 def processar_concluir_consulta():
-    print('botão clicado')
+    id_consulta_html = request.form.get('id_consulta')
+    
+    dao = ConsultaDAO()
+    dao.concluir_consulta(id_consulta_html)
+
     return redirect(url_for('gerenciar_consulta_page'))
 
 @app.route('/deletar_consulta', methods=['POST'])
 def processar_deletar_consulta():
-    print('botão clicado')
+    id_consulta_html = request.form.get('id_consulta')
+   
+    dao = ConsultaDAO()
+    dao.deletar_consulta(id_consulta_html)
+
     return redirect(url_for('gerenciar_consulta_page'))
 
 #---------------------------------#
@@ -325,7 +333,7 @@ def marcar_consulta_page():
 def processar_voltar_menu_cliente():
     if classificacao == 'cliente':
         return redirect(url_for('menu_cliente_page'))
-    else:
+    elif classificacao == 'funcionario':
         return redirect(url_for('menu_funcionario_page'))
 
 @app.route('/agendar', methods=['POST']) #funcionando 
@@ -373,7 +381,7 @@ def processar_marcar_consulta():
     if (tipo_valido and especie_valida and nome_valido and data_valida):
         if classificacao == 'cliente':
             cpf = chave_usuario
-        else:
+        elif classificacao == 'funcionario':
             cpf = None
 
         print(cpf)
@@ -405,7 +413,10 @@ def processar_marcar_consulta():
         dao.inserir_consulta(nova_consulta)
         
         flash('Consulta marcarda!', 'sucess')
-        return redirect(url_for('menu_cliente_page'))
+        if classificacao == 'cliente':
+            return redirect(url_for('menu_cliente_page'))
+        elif classificacao == 'funcionario':
+            return redirect(url_for('menu_funcionario_page'))
     
     if tipo_valido == False:
         flash('Tipo da consulta inválido', 'error')
@@ -433,8 +444,13 @@ def processar_marcar_consulta():
 def acompanhar_consulta_page():
     if status_usuario == True:
         dao = ConsultaDAO()
-        lista_acompanhar_consulta = dao.acompanhar_consulta(chave_usuario)
 
+        if classificacao == 'cliente':
+            lista_acompanhar_consulta = dao.acompanhar_consulta(chave_usuario)
+
+        elif classificacao == 'funcionario':
+            lista_acompanhar_consulta = dao.acompanhar_funcionario(chave_usuario)
+        
         return render_template('Acompanhar_consulta.html', lista_acompanhar_consulta=lista_acompanhar_consulta)
     
     else:
@@ -448,7 +464,12 @@ def acompanhar_consulta_page():
 def historico_page():
     if status_usuario == True:
         dao = HistoricoDAO()
-        lista_historico = dao.mostrar_historico(chave_usuario)
+
+        if classificacao == 'cliente':
+            lista_historico = dao.mostrar_historico_cliente(chave_usuario)
+
+        elif classificacao == 'funcionario':
+            lista_historico = dao.mostrar_historico_funcionario()
 
         return render_template('historico.html', lista_historico=lista_historico)
     

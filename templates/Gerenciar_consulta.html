@@ -22,9 +22,6 @@
         </form>
     </header>
     <main>
-        <div class="action-container">
-            <input type="text" name="" id="" placeholder="Filtro...">
-        </div>
         <div class="table-container">
             <table>
                 <thead>
@@ -46,13 +43,25 @@
                         <td>{{ c['tutor'] }}</td>
                         <td>{{ c['tipo_consulta'] }}</td>
                         <td>{{ c['data_consulta'] }}</td>
+                        {% if c['status'] == 'EM ANDAMENTO' %}
                         <td>
-                            <button type="submit" onclick="openPopup('overlay1')" class="btn_update">
+                            <button type="button" 
+                                    data-id="{{ c['id'] }}" 
+                                    onclick="openPopup('overlay1', this)" 
+                                    class="btn_update">
                                 <img src="../static/Images/simbolo_lapis.png" alt="imagem de lapis" id="lapis">
                             </button>
                         </td>
+                        {% else %}
                         <td>
-                            <button type="button" onclick="openPopup('overlay2')" class="btn_delete">
+                            {{ c['status'] }}
+                        </td>
+                        {% endif %}
+                        <td>
+                            <button type="button" 
+                                    data-id="{{ c['id'] }}" 
+                                    onclick="openPopup('overlay2', this)" 
+                                    class="btn_delete">
                                 <img src="../static/Images/simbolo_lixo.png" alt="imagem de lixo" id="lixo">
                             </button>
                         </td>
@@ -70,6 +79,7 @@
             <div class="popup">
                 <h2>Concluir como Finalizado?</h2>
                 <form action="concluir_consulta" method="post">
+                    <input type="hidden" name="id_consulta" id="id_concluir">
                     <button type="submit" name="Concluir_form" class="btn_confirm">Confirmar</button>
                 </form>
                 <button onclick="closePopup('overlay1')" class="btn_notconfirm">Fechar</button>
@@ -80,11 +90,13 @@
             <div class="popup">
                 <h2>Tem certeza que quer deletar?</h2>
                 <form action="deletar_consulta" method="post">
+                    <input type="hidden" name="id_consulta" id="id_deletar">
                     <button type="submit" name="Deletar_form" class="btn_confirm">Confirmar</button>
                 </form>
                 <button onclick="closePopup('overlay2')" class="btn_notconfirm">Fechar</button>
             </div>
         </div>
+
         <section>
             <fieldset>
                 <legend>Total de cada consulta</legend>

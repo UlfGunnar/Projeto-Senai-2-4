@@ -44,7 +44,7 @@ class ConsultaDAO:
                 FROM db_dogtor.animal tb1
                 inner join consulta tb2 on tb2.fk_animal = tb1.id_animal
                 inner join tipo_consulta tb3 on tb3.id_consulta = tb2.id_consulta
-                WHERE tb2.fk_cpf = %s;
+                WHERE tb2.fk_cpf = %s and tb2.status = 'EM ANDAMENTO';
             """
         
             cursor.execute(sql, (cpf_usuario,))
@@ -67,16 +67,18 @@ class ConsultaDAO:
             sql = """
                 SELECT
                     c.id_consulta                           AS id,
+                    c.status                                AS status,
                     a.nome_animal                           AS nome_pet,
                     cli.nome_cliente                        AS tutor,
                     tc.finalidade                           AS tipo_consulta,
                     DATE_FORMAT(c.dt_consulta, '%d/%m/%Y')  AS data_consulta
                 FROM consulta AS c
-                INNER JOIN animal AS a         ON a.id_animal    = c.fk_animal
-                INNER JOIN cliente AS cli      ON cli.cpf        = c.fk_cpf
-                INNER JOIN tipo_consulta AS tc ON tc.id_consulta = c.fk_tipo_consulta
+                LEFT JOIN animal AS a         ON a.id_animal    = c.fk_animal
+                LEFT JOIN cliente AS cli      ON cli.cpf        = c.fk_cpf
+                LEFT JOIN tipo_consulta AS tc ON tc.id_consulta = c.fk_tipo_consulta
                 ORDER BY c.id_consulta ASC
             """
+            
             cursor.execute(sql)
             return cursor.fetchall()
 
@@ -105,6 +107,45 @@ class ConsultaDAO:
 
         except Exception as e:
             print("Erro ao buscar totais:", e)
+        finally:
+            if cursor: cursor.close()
+            if conn:   conn.close()
+
+    def concluir_consulta(self, id_consulta):
+        conn = None
+        cursor = None
+        try:
+            conn = get_connection()
+            cursor = conn.cursor(dictionary=True)
+            sql = """
+                UPDATE consulta
+                SET status = 'CONCLUIDO'
+                WHERE id_consulta = %s
+            """
+            cursor.execute(sql, (id_consulta,))
+            conn.commit()
+
+        except Exception as e:
+            print("Erro ao dar update:", e)
+        finally:
+            if cursor: cursor.close()
+            if conn:   conn.close()
+    
+    def deletar_consulta(self, id_consulta):
+        conn = None
+        cursor = None
+        try:
+            conn = get_connection()
+            cursor = conn.cursor(dictionary=True)
+            sql = """
+                DELETE FROM consulta
+                WHERE id_consulta = %s
+            """
+            cursor.execute(sql, (id_consulta,))
+            conn.commit()
+
+        except Exception as e:
+            print("Erro ao dar update:", e)
         finally:
             if cursor: cursor.close()
             if conn:   conn.close()
