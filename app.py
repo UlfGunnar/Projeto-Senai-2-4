@@ -54,16 +54,17 @@ def processar_login():
             if verificacao_login[0][0]:
                 classificacao = 'cliente'
                 chave_usuario = verificacao_login[0][0]
-
                 return redirect(url_for('menu_cliente_page'))
             else:
                 classificacao = 'funcionario'
                 chave_usuario = verificacao_login[0][1]
                 print(chave_usuario)
-
                 return redirect(url_for('menu_funcionario_page'))
-    except: 
-        return redirect(url_for('login_page'))   
+        else:
+            return redirect(url_for('login_page'))  # adiciona isto
+
+    except:
+        return redirect(url_for('login_page')) 
 
 #---------------------------#
 #---------REGISTRAR---------#
