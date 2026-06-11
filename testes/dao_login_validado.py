@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.login_dao import LoginDAO
-from DAO.classes import Login
+from backend.classes import Login
 
 dao = LoginDAO()
 

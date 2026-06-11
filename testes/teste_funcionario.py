@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Funcionarios_dao import FuncionarioDAO
-from DAO.classes import funcionario
+from backend.classes import funcionario
 
 dao = FuncionarioDAO()
 

@@ -39,111 +39,19 @@
                         </tr>
                 </thead>
                 <tbody>
+                    {% for item in lista_historico %}
                     <tr>
-                        <td>Rex</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 08:00</td>
-                        <td>R$ 120,00</td>
-                        <td>Consulta Geral</td>
+                        <td>{{ item['nome_animal'] }}</td>
+                        <td>{{ item['espcie'] }}</td>
+                        <td>{{ item['data_hora'] }}</td>
+                        <td>R$ {{ item['valor'] }}</td>
+                        <td>{{ item['finalidade'] }}</td>
                     </tr>
+                    {% else %}
                     <tr>
-                        <td>Mimi</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 08:30</td>
-                        <td>R$ 90,00</td>
-                        <td>Vacinação</td>
+                        <td colspan="5">Nenhuma consulta encontrada</td>
                     </tr>
-                    <tr>
-                        <td>Thor</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 09:00</td>
-                        <td>R$ 150,00</td>
-                        <td>Exame Clínico</td>
-                    </tr>
-                    <tr>
-                        <td>Luna</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 09:30</td>
-                        <td>R$ 110,00</td>
-                        <td>Retorno</td>
-                    </tr>
-                    <tr>
-                        <td>Mel</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 10:00</td>
-                        <td>R$ 130,00</td>
-                        <td>Consulta Geral</td>
-                    </tr>
-                    <tr>
-                        <td>Nina</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 10:30</td>
-                        <td>R$ 95,00</td>
-                        <td>Vacinação</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 11:00</td>
-                        <td>R$ 180,00</td>
-                        <td>Cirurgia</td>
-                    </tr>
-                    <tr>
-                        <td>Simba</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 11:30</td>
-                        <td>R$ 100,00</td>
-                        <td>Consulta Geral</td>
-                    </tr>
-                    <tr>
-                        <td>Pipoca</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 13:00</td>
-                        <td>R$ 140,00</td>
-                        <td>Exame Clínico</td>
-                    </tr>
-                    <tr>
-                        <td>Frajola</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 13:30</td>
-                        <td>R$ 90,00</td>
-                        <td>Retorno</td>
-                    </tr>
-                    <tr>
-                        <td>Max</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 14:00</td>
-                        <td>R$ 120,00</td>
-                        <td>Consulta Geral</td>
-                    </tr>
-                    <tr>
-                        <td>Amora</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 14:30</td>
-                        <td>R$ 105,00</td>
-                        <td>Vacinação</td>
-                    </tr>
-                    <tr>
-                        <td>Spike</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 15:00</td>
-                        <td>R$ 160,00</td>
-                        <td>Exame Clínico</td>
-                    </tr>
-                    <tr>
-                        <td>Belinha</td>
-                        <td>Cachorro</td>
-                        <td>31/05/2026 15:30</td>
-                        <td>R$ 125,00</td>
-                        <td>Retorno</td>
-                    </tr>
-                    <tr>
-                        <td>Tom</td>
-                        <td>Gato</td>
-                        <td>31/05/2026 16:00</td>
-                        <td>R$ 115,00</td>
-                        <td>Consulta Geral</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

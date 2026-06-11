@@ -118,6 +118,13 @@ def validar_outra_especie_animal(outra_especie_animal): #está funfando
 
 #data e hora (usar datetime provavelmente)
     
+def validar_data_consulta(data_consulta):
+    try:
+        data = datetime.strptime(data_consulta, "%Y-%m-%d")  # ← feito pelo claude pq igor não usou o metodo FCQDC
+        return data.strftime("%Y-%m-%d")
+    except ValueError:
+        return False
+
 def validar_data(data_consulta): 
     try:
         data = datetime.strptime(data_consulta, "%d/%m/%Y")

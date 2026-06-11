@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Cliente_dao import ClienteDAO
-from DAO.classes import Paciente
+from backend.classes import Paciente
 
 dao = ClienteDAO()
 

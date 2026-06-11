@@ -28,3 +28,28 @@ class LoginDAO:
         finally:
             cursor.close()
             conn.close()
+    
+    def validar_login(self, login):
+        try:
+            conn = get_connection()
+            cursor = conn.cursor()
+            sql = """
+                SELECT 
+                    fk_cpf,
+                    fk_funcionario,
+                    senha
+                FROM login
+                WHERE (fk_cpf         = %s OR    fk_funcionario  = %s)
+                AND    senha          = %s
+            """
+
+            cursor.execute(sql, (login.fk_cpf, login.fk_funcionario, login.senha))
+
+            return cursor.fetchall()
+        
+        except Exception as e:
+            print("Erro ao inserir funcionario", e)
+
+        finally:
+            cursor.close()
+            conn.close()

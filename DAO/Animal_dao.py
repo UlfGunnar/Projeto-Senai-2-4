@@ -23,6 +23,8 @@ class AnimalDAO:
 
             cursor.execute(sql, valores)
             conn.commit()
+
+            return cursor.lastrowid
         
         except Exception as e:
             print("Erro ao inserir animal: ", e)

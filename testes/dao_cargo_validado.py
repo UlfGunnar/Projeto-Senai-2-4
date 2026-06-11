@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Cargo_dao import CargoDAO
-from DAO.classes import cargo
+from backend.classes import cargo
 
 dao = CargoDAO()
 

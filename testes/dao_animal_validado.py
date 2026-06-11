@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Animal_dao import AnimalDAO
-from DAO.classes import Animal
+from backend.classes import Animal
 
 dao = AnimalDAO()
 

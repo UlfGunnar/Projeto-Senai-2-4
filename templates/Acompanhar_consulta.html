@@ -34,146 +34,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for consulta in lista_acompanhar_consulta %}
                     <tr>
-                        <td>Rex</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 09:00</td>
-                        <td>Agendado</td>
-                        <td>Consulta de rotina</td>
+                        <td>{{ consulta['nome_animal'] }}</td>
+                        <td>{{ consulta['especie'] }}</td>
+                        <td>{{ consulta['data_hora'] }}</td>
+                        <td>{{ consulta['status'] }}</td>
+                        <td>{{ consulta['finalidade'] }}</td>
                     </tr>
+                    {% else %}
                     <tr>
-                        <td>Mimi</td>
-                        <td>Gato</td>
-                        <td class="data_hora">30/05/2026 10:30</td>
-                        <td>Concluído</td>
-                        <td>Vacinação</td>
+                        <td colspan="5">Nenhuma consulta encontrada</td>
                     </tr>
-                    <tr>
-                        <td>Thor</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 11:00</td>
-                        <td>Em andamento</td>
-                        <td>Exame clínico</td>
-                    </tr>
-                    <tr>
-                        <td>Luna</td>
-                        <td>Gato</td>
-                        <td class="data_hora">30/05/2026 13:00</td>
-                        <td>Agendado</td>
-                        <td>Castração</td>
-                    </tr>
-                    <tr>
-                        <td>Mel</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 14:15</td>
-                        <td>Cancelado</td>
-                        <td>Banho e tosa</td>
-                    </tr>
-                    <tr>
-                        <td>Nina</td>
-                        <td>Coelho</td>
-                        <td class="data_hora">30/05/2026 15:00</td>
-                        <td>Agendado</td>
-                        <td>Avaliação geral</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 15:30</td>
-                        <td>Concluído</td>
-                        <td>Retorno</td>
-                    </tr>
-                    <tr>
-                        <td>Pipoca</td>
-                        <td>Hamster</td>
-                        <td class="data_hora">30/05/2026 16:00</td>
-                        <td>Agendado</td>
-                        <td>Consulta de rotina</td>
-                    </tr>
-                    <tr>
-                        <td>Fred</td>
-                        <td>Pássaro</td>
-                        <td class="data_hora">30/05/2026 16:45</td>
-                        <td>Em andamento</td>
-                        <td>Tratamento</td>
-                    </tr>
-                    <tr>
-                        <td>Amora</td>
-                        <td>Gato</td>
-                        <td class="data_hora">30/05/2026 17:30</td>
-                        <td>Agendado</td>
-                        <td>Vacinação</td>
-                    </tr>
-                    <tr>
-                        <td>Rex</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 09:00</td>
-                        <td>Agendado</td>
-                        <td>Consulta de rotina</td>
-                    </tr>
-                    <tr>
-                        <td>Mimi</td>
-                        <td>Gato</td>
-                        <td class="data_hora">30/05/2026 10:30</td>
-                        <td>Concluído</td>
-                        <td>Vacinação</td>
-                    </tr>
-                    <tr>
-                        <td>Thor</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 11:00</td>
-                        <td>Em andamento</td>
-                        <td>Exame clínico</td>
-                    </tr>
-                    <tr>
-                        <td>Luna</td>
-                        <td>Gato</td>
-                        <td class="data_hora">30/05/2026 13:00</td>
-                        <td>Agendado</td>
-                        <td>Castração</td>
-                    </tr>
-                    <tr>
-                        <td>Mel</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 14:15</td>
-                        <td>Cancelado</td>
-                        <td>Banho e tosa</td>
-                    </tr>
-                    <tr>
-                        <td>Nina</td>
-                        <td>Coelho</td>
-                        <td class="data_hora">30/05/2026 15:00</td>
-                        <td>Agendado</td>
-                        <td>Avaliação geral</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>Cachorro</td>
-                        <td class="data_hora">30/05/2026 15:30</td>
-                        <td>Concluído</td>
-                        <td>Retorno</td>
-                    </tr>
-                    <tr>
-                        <td>Pipoca</td>
-                        <td>Hamster</td>
-                        <td class="data_hora">30/05/2026 16:00</td>
-                        <td>Agendado</td>
-                        <td>Consulta de rotina</td>
-                    </tr>
-                    <tr>
-                        <td>Fred</td>
-                        <td>Pássaro</td>
-                        <td class="data_hora">30/05/2026 16:45</td>
-                        <td>Em andamento</td>
-                        <td>Tratamento</td>
-                    </tr>
-                    <tr>
-                        <td>Amora</td>
-                        <td>Gato</td>
-                        <td class="data_hora">30/05/2026 17:30</td>
-                        <td>Agendado</td>
-                        <td>Vacinação</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

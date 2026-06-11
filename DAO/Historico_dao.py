@@ -30,3 +30,31 @@ class HistoricoDAO:
         finally:
             cursor.close()
             conn.close()
+
+    def mostrar_historico(self, cpf_usuario):
+        try:
+            conn = get_connection()
+            cursor = conn.cursor(dictionary=True) #vai retornar em dicionario automáticamente 
+            sql = """
+                select 
+                    a.nome_animal								as nome_animal,
+                    a.especie									as espcie,
+                    CONCAT(c.dt_consulta, ' ', c.hr_consulta)   as data_hora,
+                    tc.valor 									as valor,
+                    tc.finalidade								as finalidade
+                from animal as a
+                inner join consulta as c on a.id_animal = c.fk_animal
+                inner join tipo_consulta as tc on tc.id_consulta = c.id_consulta
+                WHERE c.fk_cpf = %s
+            """
+        
+            cursor.execute(sql, (cpf_usuario,))
+
+            return cursor.fetchall()
+        
+        except Exception as e:
+            print("Erro ao inserir funcionario", e)
+
+        finally:
+            cursor.close()
+            conn.close()

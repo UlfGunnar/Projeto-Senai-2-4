@@ -40,11 +40,11 @@ class cargo():
 class Consulta():
     #data = date
     #hora = date
-    def __init__(self, id_consulta: int, fk_animal: int,  fk_cpf: str, fk_matricula_medico: int, fk_tipo_consulta: int, dt_consulta, hr_consulta):
+    def __init__(self, id_consulta: int, fk_animal: int,  fk_cpf: str, fk_funcionario: int, fk_tipo_consulta: int, dt_consulta, hr_consulta):
         self.id_consulta = id_consulta
         self.fk_animal = fk_animal
         self.fk_cpf = fk_cpf
-        self.fk_matricula_medico = fk_matricula_medico
+        self.fk_funcionario = fk_funcionario
         self.fk_tipo_consulta = fk_tipo_consulta
         self.dt_consulta = dt_consulta
         self.hr_consulta = hr_consulta

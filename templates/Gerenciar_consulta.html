@@ -39,12 +39,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for c in lista_tabela %}
                     <tr>
-                        <td>1</td>
-                        <td>Rex</td>
-                        <td>Lucas</td>
-                        <td>Check-up</td>
-                        <td>31/03/2005</td>
+                        <td>{{ c['id'] }}</td>
+                        <td>{{ c['nome_pet'] }}</td>
+                        <td>{{ c['tutor'] }}</td>
+                        <td>{{ c['tipo_consulta'] }}</td>
+                        <td>{{ c['data_consulta'] }}</td>
                         <td>
                             <button type="submit" onclick="openPopup('overlay1')" class="btn_update">
                                 <img src="../static/Images/simbolo_lapis.png" alt="imagem de lapis" id="lapis">
@@ -56,87 +57,11 @@
                             </button>
                         </td>
                     </tr>
+                    {% else %}
                     <tr>
-                        <td>2</td>
-                        <td>Mel</td>
-                        <td>Ana Paula</td>
-                        <td>Vacinação</td>
-                        <td>12/05/2024</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
+                        <td colspan="7">Nenhuma consulta encontrada</td>
                     </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Bolt</td>
-                        <td>Carlos Eduardo</td>
-                        <td>Cirurgia</td>
-                        <td>07/01/2025</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Nina</td>
-                        <td>Fernanda</td>
-                        <td>Retorno</td>
-                        <td>22/08/2024</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Toby</td>
-                        <td>Roberto</td>
-                        <td>Consulta dermatológica</td>
-                        <td>15/11/2024</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Luna</td>
-                        <td>Juliana</td>
-                        <td>Check-up</td>
-                        <td>03/02/2025</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Thor</td>
-                        <td>Marcos</td>
-                        <td>Castração</td>
-                        <td>19/06/2024</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Pérola</td>
-                        <td>Tatiane</td>
-                        <td>Vacinação</td>
-                        <td>28/09/2024</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Max</td>
-                        <td>Diego</td>
-                        <td>Emergência</td>
-                        <td>05/12/2024</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Mia</td>
-                        <td>Beatriz</td>
-                        <td>Consulta nutricional</td>
-                        <td>14/03/2025</td>
-                        <td><button type="submit" class="btn_update">Atualizar</button></td>
-                        <td><button type="button" class="btn_delete">Deletar</button></td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -163,18 +88,12 @@
         <section>
             <fieldset>
                 <legend>Total de cada consulta</legend>
+                {% for item in lista_dashboard %}
                 <div class="data-container">
-                    <h3>67</h3>
-                    <p>Check-up</p>
+                    <h3>{{ item['total'] }}</h3>
+                    <p>{{ item['tipo'] }}</p>
                 </div>
-                <div class="data-container">
-                    <h3>42</h3>
-                    <p>Pediatríco</p>
-                </div>
-                <div class="data-container">
-                    <h3>13</h3>
-                    <p>Geriátrico</p>
-                </div>
+                {% endfor %}
             </fieldset>
         </section>
     </main>

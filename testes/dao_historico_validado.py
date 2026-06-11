@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Historico_dao import HistoricoDAO
-from DAO.classes import Historico
+from backend.classes import Historico
 
 dao = HistoricoDAO()
 

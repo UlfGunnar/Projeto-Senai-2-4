@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Tipos_de_consulta_dao import TiposDeConsultaDAO    
-from DAO.classes import Tipo_de_consulta
+from backend.classes import Tipo_de_consulta
 
 dao = TiposDeConsultaDAO()
 

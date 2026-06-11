@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from connection.connection import get_connection
 from DAO.Consulta_dao import ConsultaDAO
-from DAO.classes import Consulta
+from backend.classes import Consulta
 
 dao = ConsultaDAO()
 
